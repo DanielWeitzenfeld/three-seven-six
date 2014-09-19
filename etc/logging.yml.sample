@@ -1,0 +1,8 @@
+development:
+  file: debug
+test:
+  file: debug
+staging:
+  file: info
+production:
+  file: info
