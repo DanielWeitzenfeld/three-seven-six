@@ -1,0 +1,6 @@
+development: &local
+  host: localhost
+  user: root
+  pass: ''
+  port: 3306
+  database: three_seven_six

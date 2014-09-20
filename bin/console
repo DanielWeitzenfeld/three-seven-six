@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export PYTHONPATH="./lib:$PYTHONPATH"
+export THREE_SEVEN_SIX_ORIGINAL_PYTHONSTARTUP=$PYTHONSTARTUP
+export PYTHONSTARTUP=./etc/console.py
+
+python
