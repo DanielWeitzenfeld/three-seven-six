@@ -1310,3 +1310,51 @@ Traceback (most recent call last):
   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 67, in dispatch_line
     self.user_line(frame)
 BdbQuit
+2014-09-21 10:33:34,725: INFO: Called with from_scratch=False
+2014-09-21 10:33:34,758: INFO: Alex Acker
+2014-09-21 10:33:51,181: INFO: shit the bed on pbp: Alex Acker, url: http://www.basketball-reference.com/players/a/ackeral01.html
+2014-09-21 10:33:55,523: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 87, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 87, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 10:33:57,285: INFO: Called with from_scratch=False
+2014-09-21 10:33:57,319: INFO: Alex Acker
+2014-09-21 10:34:05,675: INFO: shit the bed on totals: Alex Acker, url: http://www.basketball-reference.com/players/a/ackeral01.html
+2014-09-21 10:34:57,338: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 10:35:12,308: INFO: Called with from_scratch=True
+2014-09-21 10:35:28,292: INFO: Tariq Abdul-Wahad
+2014-09-21 10:35:41,327: INFO: Shareef Abdur-Rahim
+2014-09-21 10:35:54,877: INFO: Alex Acker
+2014-09-21 10:36:06,330: INFO: Quincy Acy
+2014-09-21 10:36:18,199: INFO: Hassan Adams
+2014-09-21 10:37:13,826: INFO: Called with from_scratch=False
+2014-09-21 10:37:13,864: INFO: Steven Adams
+2014-09-21 10:37:25,673: INFO: Jeff Adrien
+2014-09-21 10:37:37,596: INFO: Arron Afflalo
+2014-09-21 10:37:51,071: INFO: Maurice Ager
+2014-09-21 10:38:03,448: INFO: Blake Ahearn

@@ -10,7 +10,7 @@ from three_seven_six import application, bbalref_scraper
 from three_seven_six.dbs import mysql as mysql_db
 from three_seven_six.models import *
 
-WAIT_BETWEEN_REQUESTS = 3
+WAIT_BETWEEN_REQUESTS = 2.6
 PLAYERS_URL = 'http://www.basketball-reference.com/players/'
 MUST_HAVE_PLAYED_SINCE = 2001
 
@@ -41,7 +41,7 @@ class App(application.Application):
         self.mysql.flush()
         self.mysql.commit()
         all_players = []
-        for letter in list(string.ascii_lowercase)[:2]:
+        for letter in list(string.ascii_lowercase):
             url = PLAYERS_URL + letter + '/'
             try:
                 df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
@@ -63,7 +63,7 @@ class App(application.Application):
     def scrape_player_data(self):
         players = self.mysql.query(Player).filter(Player.to_year > MUST_HAVE_PLAYED_SINCE,
                                                   Player.scraped == False).all()
-        for p in players[:5]:
+        for p in players:
             self.info(p.player)
             try:
                 df_shooting = bbalref_scraper.SHOOTING.fetch_and_clean(p.url)
@@ -79,7 +79,7 @@ class App(application.Application):
                 df_pbp = bbalref_scraper.PBP.fetch_and_clean(p.url)
                 df_pbp['key'] = p.key
                 df_pbp2 = df_pbp.astype(object).where(pd.notnull(df_pbp), None)
-                df_pbp2.to_sql('play_by_play', con=mysql_db.engine, if_exists='append', index=False)
+                df_pbp2.to_sql('playbyplay', con=mysql_db.engine, if_exists='append', index=False)
             except:
                 self.info('shit the bed on pbp: %s, url: %s' % (p.player, p.url))
                 import pdb; pdb.set_trace()
