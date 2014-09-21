@@ -11,7 +11,7 @@ class table(object):
         self.parse_dates = parse_dates
         self.post_process = post_process
 
-    def fetch_and_clean(self, url):
+    def fetch_and_clean(self, url, player_key, objectify):
         df = pd.io.html.read_html(url, flavor='bs4', attrs={'id': self.dom_id}, parse_dates=self.parse_dates,
                                   infer_types=self.parse_dates,
                                   tupleize_cols=True, skiprows=0)
@@ -27,6 +27,9 @@ class table(object):
                     df = p(df)
             else:
                 df = self.post_process(df)
+        df['player_key'] = player_key
+        if objectify: # makes safe for pd.to_sql, otherwise nan's will cause errors.
+            df = df.astype(object).where(pd.notnull(df), None)
         return df
 
 
@@ -186,7 +189,7 @@ def scrape_hrefs_from_player_table(url, id='players'):
         parsed_data.append({'player': name, 'link': link})
     df = pd.DataFrame(parsed_data)
     pattern = r"(?P<crap>.+/)(?P<key>[a-z0-9]+)(?P<suffix>.+)"
-    df['key'] = df.link.str.extract(pattern)['key']
+    df['player_key'] = df.link.str.extract(pattern)['key']
     df.player = df.player.str.replace('*', '')
     return df
 

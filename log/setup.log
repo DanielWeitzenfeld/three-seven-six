@@ -1358,3 +1358,1147 @@ BdbQuit
 2014-09-21 10:37:37,596: INFO: Arron Afflalo
 2014-09-21 10:37:51,071: INFO: Maurice Ager
 2014-09-21 10:38:03,448: INFO: Blake Ahearn
+2014-09-21 10:43:19,701: INFO: Called with from_scratch=True
+2014-09-21 10:45:51,003: INFO: Failed to find or parse table on page: http://www.basketball-reference.com/players/x/
+2014-09-21 10:45:54,062: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    bbalref_scraper.PLAYERS.dom_id)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 174, in scrape_hrefs_from_player_table
+    assert t.contents[5].name == 'tbody'
+AttributeError: 'NoneType' object has no attribute 'contents'
+2014-09-21 10:47:12,729: INFO: Called with from_scratch=True
+2014-09-21 10:49:54,892: INFO: Tariq Abdul-Wahad
+2014-09-21 10:50:06,869: INFO: Shareef Abdur-Rahim
+2014-09-21 10:50:19,501: INFO: Alex Acker
+2014-09-21 10:50:29,598: INFO: Quincy Acy
+2014-09-21 10:50:39,778: INFO: Hassan Adams
+2014-09-21 10:50:50,826: INFO: Steven Adams
+2014-09-21 10:51:00,843: INFO: Jeff Adrien
+2014-09-21 10:51:11,663: INFO: Arron Afflalo
+2014-09-21 10:51:23,676: INFO: Maurice Ager
+2014-09-21 10:51:34,876: INFO: Blake Ahearn
+2014-09-21 10:51:45,697: INFO: Alexis Ajinca
+2014-09-21 10:51:56,849: INFO: Josh Akognon
+2014-09-21 10:52:06,238: INFO: Solomon Alabi
+2014-09-21 10:52:15,911: INFO: Cole Aldrich
+2014-09-21 10:52:27,280: INFO: LaMarcus Aldridge
+2014-09-21 10:52:38,983: INFO: Cory Alexander
+2014-09-21 10:52:51,314: INFO: Courtney Alexander
+2014-09-21 10:53:02,628: INFO: Joe Alexander
+2014-09-21 10:53:12,622: INFO: Victor Alexander
+2014-09-21 10:53:23,838: INFO: Lavoy Allen
+2014-09-21 10:53:35,114: INFO: Malik Allen
+2014-09-21 10:53:48,861: INFO: Ray Allen
+2014-09-21 10:54:04,349: INFO: Tony Allen
+2014-09-21 10:54:17,122: INFO: Lance Allred
+2014-09-21 10:54:26,496: INFO: Morris Almond
+2014-09-21 10:54:36,740: INFO: Rafer Alston
+2014-09-21 10:54:50,370: INFO: John Amaechi
+2014-09-21 10:54:59,183: INFO: shit the bed on totals: John Amaechi, url: http://www.basketball-reference.com/players/a/amaecjo01.html
+2014-09-21 10:56:16,359: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 95, in scrape_player_data
+    p.scraped = True
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 95, in scrape_player_data
+    p.scraped = True
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 10:58:36,806: INFO: Called with from_scratch=True
+2014-09-21 11:01:19,096: INFO: Tariq Abdul-Wahad
+2014-09-21 11:01:20,454: INFO: shit the bed on shooting: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 11:01:24,500: INFO: shit the bed on pbp: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 11:01:28,473: INFO: shit the bed on totals: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 11:01:31,074: INFO: Shareef Abdur-Rahim
+2014-09-21 11:01:32,609: INFO: shit the bed on shooting: Shareef Abdur-Rahim, url: http://www.basketball-reference.com/players/a/abdursh01.html
+2014-09-21 11:01:36,846: INFO: shit the bed on pbp: Shareef Abdur-Rahim, url: http://www.basketball-reference.com/players/a/abdursh01.html
+2014-09-21 11:01:41,104: INFO: shit the bed on totals: Shareef Abdur-Rahim, url: http://www.basketball-reference.com/players/a/abdursh01.html
+2014-09-21 11:01:43,706: INFO: Alex Acker
+2014-09-21 11:01:44,844: INFO: shit the bed on shooting: Alex Acker, url: http://www.basketball-reference.com/players/a/ackeral01.html
+2014-09-21 11:01:48,230: INFO: shit the bed on pbp: Alex Acker, url: http://www.basketball-reference.com/players/a/ackeral01.html
+2014-09-21 11:01:51,596: INFO: shit the bed on totals: Alex Acker, url: http://www.basketball-reference.com/players/a/ackeral01.html
+2014-09-21 11:01:54,197: INFO: Quincy Acy
+2014-09-21 11:01:55,041: INFO: shit the bed on shooting: Quincy Acy, url: http://www.basketball-reference.com/players/a/acyqu01.html
+2014-09-21 11:01:58,515: INFO: shit the bed on pbp: Quincy Acy, url: http://www.basketball-reference.com/players/a/acyqu01.html
+2014-09-21 11:02:01,871: INFO: shit the bed on totals: Quincy Acy, url: http://www.basketball-reference.com/players/a/acyqu01.html
+2014-09-21 11:02:04,472: INFO: Hassan Adams
+2014-09-21 11:02:05,409: INFO: shit the bed on shooting: Hassan Adams, url: http://www.basketball-reference.com/players/a/adamsha01.html
+2014-09-21 11:02:08,910: INFO: shit the bed on pbp: Hassan Adams, url: http://www.basketball-reference.com/players/a/adamsha01.html
+2014-09-21 11:02:12,485: INFO: shit the bed on totals: Hassan Adams, url: http://www.basketball-reference.com/players/a/adamsha01.html
+2014-09-21 11:02:15,086: INFO: Steven Adams
+2014-09-21 11:02:15,792: INFO: shit the bed on shooting: Steven Adams, url: http://www.basketball-reference.com/players/a/adamsst01.html
+2014-09-21 11:02:19,146: INFO: shit the bed on pbp: Steven Adams, url: http://www.basketball-reference.com/players/a/adamsst01.html
+2014-09-21 11:02:22,430: INFO: shit the bed on totals: Steven Adams, url: http://www.basketball-reference.com/players/a/adamsst01.html
+2014-09-21 11:02:25,031: INFO: Jeff Adrien
+2014-09-21 11:02:26,205: INFO: shit the bed on shooting: Jeff Adrien, url: http://www.basketball-reference.com/players/a/adrieje01.html
+2014-09-21 11:02:29,756: INFO: shit the bed on pbp: Jeff Adrien, url: http://www.basketball-reference.com/players/a/adrieje01.html
+2014-09-21 11:02:33,273: INFO: shit the bed on totals: Jeff Adrien, url: http://www.basketball-reference.com/players/a/adrieje01.html
+2014-09-21 11:02:35,875: INFO: Arron Afflalo
+2014-09-21 11:02:37,340: INFO: shit the bed on shooting: Arron Afflalo, url: http://www.basketball-reference.com/players/a/afflaar01.html
+2014-09-21 11:02:41,420: INFO: shit the bed on pbp: Arron Afflalo, url: http://www.basketball-reference.com/players/a/afflaar01.html
+2014-09-21 11:02:45,811: INFO: shit the bed on totals: Arron Afflalo, url: http://www.basketball-reference.com/players/a/afflaar01.html
+2014-09-21 11:02:48,412: INFO: Maurice Ager
+2014-09-21 11:02:49,510: INFO: shit the bed on shooting: Maurice Ager, url: http://www.basketball-reference.com/players/a/agerma01.html
+2014-09-21 11:02:53,308: INFO: shit the bed on pbp: Maurice Ager, url: http://www.basketball-reference.com/players/a/agerma01.html
+2014-09-21 11:02:57,041: INFO: shit the bed on totals: Maurice Ager, url: http://www.basketball-reference.com/players/a/agerma01.html
+2014-09-21 11:02:59,642: INFO: Blake Ahearn
+2014-09-21 11:03:00,703: INFO: shit the bed on shooting: Blake Ahearn, url: http://www.basketball-reference.com/players/a/ahearbl01.html
+2014-09-21 11:03:04,366: INFO: shit the bed on pbp: Blake Ahearn, url: http://www.basketball-reference.com/players/a/ahearbl01.html
+2014-09-21 11:03:07,953: INFO: shit the bed on totals: Blake Ahearn, url: http://www.basketball-reference.com/players/a/ahearbl01.html
+2014-09-21 11:03:10,553: INFO: Alexis Ajinca
+2014-09-21 11:03:11,485: INFO: shit the bed on shooting: Alexis Ajinca, url: http://www.basketball-reference.com/players/a/ajincal01.html
+2014-09-21 11:03:15,049: INFO: shit the bed on pbp: Alexis Ajinca, url: http://www.basketball-reference.com/players/a/ajincal01.html
+2014-09-21 11:03:16,827: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 90, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 11:03:44,131: INFO: Called with from_scratch=False
+2014-09-21 11:03:44,223: INFO: Tariq Abdul-Wahad
+2014-09-21 11:03:45,521: INFO: shit the bed on shooting: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 11:04:56,748: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 78, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 78, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 11:04:58,219: INFO: Called with from_scratch=False
+2014-09-21 11:04:58,288: INFO: Tariq Abdul-Wahad
+2014-09-21 11:04:59,563: INFO: shit the bed on shooting: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 11:05:52,531: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 78, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 78, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 11:06:08,243: INFO: Called with from_scratch=True
+2014-09-21 11:08:51,104: INFO: Tariq Abdul-Wahad
+2014-09-21 11:09:04,147: INFO: Shareef Abdur-Rahim
+2014-09-21 11:09:18,291: INFO: Alex Acker
+2014-09-21 11:09:29,113: INFO: Quincy Acy
+2014-09-21 11:09:39,862: INFO: Hassan Adams
+2014-09-21 11:09:51,164: INFO: Steven Adams
+2014-09-21 11:10:01,682: INFO: Jeff Adrien
+2014-09-21 11:10:13,154: INFO: Arron Afflalo
+2014-09-21 11:10:26,640: INFO: Maurice Ager
+2014-09-21 11:10:38,756: INFO: Blake Ahearn
+2014-09-21 11:10:50,430: INFO: Alexis Ajinca
+2014-09-21 11:11:01,764: INFO: Josh Akognon
+2014-09-21 11:11:11,374: INFO: Solomon Alabi
+2014-09-21 11:11:21,607: INFO: Cole Aldrich
+2014-09-21 11:11:34,023: INFO: LaMarcus Aldridge
+2014-09-21 11:11:46,604: INFO: Cory Alexander
+2014-09-21 11:11:58,869: INFO: Courtney Alexander
+2014-09-21 11:12:10,930: INFO: Joe Alexander
+2014-09-21 11:12:21,915: INFO: Victor Alexander
+2014-09-21 11:12:33,841: INFO: Lavoy Allen
+2014-09-21 11:12:45,993: INFO: Malik Allen
+2014-09-21 11:12:59,870: INFO: Ray Allen
+2014-09-21 11:13:14,598: INFO: Tony Allen
+2014-09-21 11:13:27,789: INFO: Lance Allred
+2014-09-21 11:13:37,243: INFO: Morris Almond
+2014-09-21 11:13:47,452: INFO: Rafer Alston
+2014-09-21 11:14:00,953: INFO: John Amaechi
+2014-09-21 11:14:12,656: INFO: Al-Farouq Aminu
+2014-09-21 11:14:23,420: INFO: Louis Amundson
+2014-09-21 11:14:36,879: INFO: Chris Andersen
+2014-09-21 11:14:49,869: INFO: David Andersen
+2014-09-21 11:15:00,105: INFO: Alan Anderson
+2014-09-21 11:15:11,586: INFO: Antonio Anderson
+2014-09-21 11:15:21,181: INFO: Derek Anderson
+2014-09-21 11:15:34,902: INFO: James Anderson
+2014-09-21 11:15:46,537: INFO: Kenny Anderson
+2014-09-21 11:16:01,003: INFO: Nick Anderson
+2014-09-21 11:16:13,412: INFO: Ryan Anderson
+2014-09-21 11:16:26,310: INFO: Shandon Anderson
+2014-09-21 11:16:40,380: INFO: Martynas Andriuskevicius
+2014-09-21 11:16:50,167: INFO: Giannis Antetokounmpo
+2014-09-21 11:16:59,867: INFO: Carmelo Anthony
+2014-09-21 11:17:14,988: INFO: Greg Anthony
+2014-09-21 11:17:29,440: INFO: Joel Anthony
+2014-09-21 11:17:42,410: INFO: Pero Antic
+2014-09-21 11:17:52,720: INFO: Rafael Araujo
+2014-09-21 11:18:04,058: INFO: Robert Archibald
+2014-09-21 11:18:14,966: INFO: Gilbert Arenas
+2014-09-21 11:18:29,464: INFO: Trevor Ariza
+2014-09-21 11:18:44,288: INFO: Brandon Armstrong
+2014-09-21 11:18:54,818: INFO: Darrell Armstrong
+2014-09-21 11:19:09,417: INFO: Hilton Armstrong
+2014-09-21 11:19:23,146: INFO: Carlos Arroyo
+2014-09-21 11:19:38,421: INFO: Darrell Arthur
+2014-09-21 11:19:50,372: INFO: Omer Asik
+2014-09-21 11:20:02,439: INFO: Chucky Atkins
+2014-09-21 11:20:17,497: INFO: Stacey Augmon
+2014-09-21 11:20:32,447: INFO: D.J. Augustin
+2014-09-21 11:20:45,666: INFO: James Augustine
+2014-09-21 11:20:56,026: INFO: Isaac Austin
+2014-09-21 11:21:08,719: INFO: William Avery
+2014-09-21 11:21:19,376: INFO: Gustavo Ayon
+2014-09-21 11:21:31,039: INFO: Jeff Ayres
+2014-09-21 11:21:43,663: INFO: Kelenna Azubuike
+2014-09-21 11:21:55,614: INFO: Chris Babb
+2014-09-21 11:22:05,254: INFO: Luke Babbitt
+2014-09-21 11:22:15,923: INFO: Dalibor Bagaric
+2014-09-21 11:22:25,690: INFO: Maurice Baker
+2014-09-21 11:22:35,870: INFO: Vin Baker
+2014-09-21 11:22:50,124: INFO: Renaldo Balkman
+2014-09-21 11:23:01,730: INFO: Marcus Banks
+2014-09-21 11:23:14,576: INFO: Leandro Barbosa
+2014-09-21 11:23:27,803: INFO: Jose Barea
+2014-09-21 11:23:39,892: INFO: Andrea Bargnani
+2014-09-21 11:23:51,962: INFO: Erick Barkley
+2014-09-21 11:24:01,644: INFO: Harrison Barnes
+2014-09-21 11:24:12,057: INFO: Matt Barnes
+2014-09-21 11:24:26,016: INFO: Andre Barrett
+2014-09-21 11:24:37,410: INFO: Earl Barron
+2014-09-21 11:24:50,427: INFO: Dana Barros
+2014-09-21 11:25:03,551: INFO: Brent Barry
+2014-09-21 11:25:17,603: INFO: Jon Barry
+2014-09-21 11:25:31,814: INFO: Will Barton
+2014-09-21 11:25:42,174: INFO: Eddie Basden
+2014-09-21 11:25:51,694: INFO: Brandon Bass
+2014-09-21 11:26:04,419: INFO: Maceo Baston
+2014-09-21 11:26:15,544: INFO: Mengke Bateer
+2014-09-21 11:26:25,737: INFO: Esteban Batista
+2014-09-21 11:26:35,463: INFO: Mike Batiste
+2014-09-21 11:26:44,915: INFO: Tony Battie
+2014-09-21 11:26:58,888: INFO: Shane Battier
+2014-09-21 11:27:13,021: INFO: Nicolas Batum
+2014-09-21 11:27:24,275: INFO: Lonny Baxter
+2014-09-21 11:27:35,839: INFO: Jerryd Bayless
+2014-09-21 11:27:48,280: INFO: Aron Baynes
+2014-09-21 11:27:59,179: INFO: Kent Bazemore
+2014-09-21 11:28:10,275: INFO: Bradley Beal
+2014-09-21 11:28:20,640: INFO: Jerome Beasley
+2014-09-21 11:28:30,142: INFO: Michael Beasley
+2014-09-21 11:28:41,936: INFO: Rodrigue Beaubois
+2014-09-21 11:28:52,924: INFO: Marco Belinelli
+2014-09-21 11:29:05,225: INFO: Charlie Bell
+2014-09-21 11:29:17,416: INFO: Raja Bell
+2014-09-21 11:29:31,406: INFO: Troy Bell
+2014-09-21 11:29:40,989: INFO: Jonathan Bender
+2014-09-21 11:29:52,959: INFO: Corey Benjamin
+2014-09-21 11:30:04,170: INFO: Anthony Bennett
+2014-09-21 11:30:13,942: INFO: Keith Benson
+2014-09-21 11:30:23,696: INFO: Travis Best
+2014-09-21 11:30:38,077: INFO: Patrick Beverley
+2014-09-21 11:30:48,973: INFO: Mike Bibby
+2014-09-21 11:31:05,440: INFO: Andris Biedrins
+2014-09-21 11:31:18,134: INFO: Chauncey Billups
+2014-09-21 11:31:34,935: INFO: Bismack Biyombo
+2014-09-21 11:31:45,564: INFO: DeJuan Blair
+2014-09-21 11:31:57,702: INFO: Steve Blake
+2014-09-21 11:32:13,076: INFO: Will Blalock
+2014-09-21 11:32:22,619: INFO: Andray Blatche
+2014-09-21 11:32:35,189: INFO: Mookie Blaylock
+2014-09-21 11:32:48,108: INFO: Eric Bledsoe
+2014-09-21 11:32:59,392: INFO: Corie Blount
+2014-09-21 11:33:12,853: INFO: Mark Blount
+2014-09-21 11:33:25,428: INFO: Vander Blue
+2014-09-21 11:33:34,967: INFO: Tony Bobbitt
+2014-09-21 11:33:44,659: INFO: Keith Bogans
+2014-09-21 11:33:58,312: INFO: Andrew Bogut
+2014-09-21 11:34:11,053: INFO: Matt Bonner
+2014-09-21 11:34:23,698: INFO: Trevor Booker
+2014-09-21 11:34:34,320: INFO: Josh Boone
+2014-09-21 11:34:44,993: INFO: Calvin Booth
+2014-09-21 11:34:58,240: INFO: Carlos Boozer
+2014-09-21 11:35:12,120: INFO: Curtis Borchardt
+2014-09-21 11:35:21,790: INFO: Chris Bosh
+2014-09-21 11:35:34,874: INFO: Ruben Boumtje-Boumtje
+2014-09-21 11:35:44,798: INFO: Cal Bowdler
+2014-09-21 11:35:54,663: INFO: Bruce Bowen
+2014-09-21 11:36:08,896: INFO: Ryan Bowen
+2014-09-21 11:36:21,604: INFO: Ira Bowman
+2014-09-21 11:36:32,308: INFO: Earl Boykins
+2014-09-21 11:36:46,345: INFO: Cedric Bozeman
+2014-09-21 11:36:55,782: INFO: Craig Brackins
+2014-09-21 11:37:05,481: INFO: Avery Bradley
+2014-09-21 11:37:16,602: INFO: Michael Bradley
+2014-09-21 11:37:28,686: INFO: Shawn Bradley
+2014-09-21 11:37:41,726: INFO: Torraye Braggs
+2014-09-21 11:37:52,030: INFO: Elton Brand
+2014-09-21 11:38:05,620: INFO: Terrell Brandon
+2014-09-21 11:38:18,935: INFO: J.R. Bremer
+2014-09-21 11:38:30,036: INFO: Corey Brewer
+2014-09-21 11:38:42,227: INFO: Jamison Brewer
+2014-09-21 11:38:53,350: INFO: Ronnie Brewer
+2014-09-21 11:39:06,845: INFO: Primoz Brezec
+2014-09-21 11:39:19,941: INFO: Jon Brockman
+2014-09-21 11:39:30,336: INFO: Aaron Brooks
+2014-09-21 11:39:42,894: INFO: MarShon Brooks
+2014-09-21 11:39:54,489: INFO: Andre Brown
+2014-09-21 11:40:04,870: INFO: Bobby Brown
+2014-09-21 11:40:15,981: INFO: Chucky Brown
+2014-09-21 11:40:30,148: INFO: Damone Brown
+2014-09-21 11:40:40,600: INFO: Dee Brown
+2014-09-21 11:40:53,197: INFO: Dee Brown
+2014-09-21 11:41:04,365: INFO: Dee Brown
+2014-09-21 11:41:17,367: INFO: Dee Brown
+2014-09-21 11:41:28,477: INFO: Derrick Brown
+2014-09-21 11:41:39,711: INFO: Devin Brown
+2014-09-21 11:41:53,008: INFO: Ernest Brown
+2014-09-21 11:42:02,558: INFO: Kedrick Brown
+2014-09-21 11:42:14,610: INFO: Kwame Brown
+2014-09-21 11:42:28,176: INFO: Lorenzo Brown
+2014-09-21 11:42:37,812: INFO: P.J. Brown
+2014-09-21 11:42:53,654: INFO: Randy Brown
+2014-09-21 11:43:06,336: INFO: Shannon Brown
+2014-09-21 11:43:20,918: INFO: Tierre Brown
+2014-09-21 11:43:32,225: INFO: Rick Brunson
+2014-09-21 11:43:46,852: INFO: Kobe Bryant
+2014-09-21 11:44:02,335: INFO: Mark Bryant
+2014-09-21 11:44:18,047: INFO: Greg Buckner
+2014-09-21 11:44:31,665: INFO: Chase Budinger
+2014-09-21 11:44:42,386: INFO: Jud Buechler
+2014-09-21 11:44:56,328: INFO: Rodney Buford
+2014-09-21 11:45:08,842: INFO: Matt Bullard
+2014-09-21 11:45:23,022: INFO: Reggie Bullock
+2014-09-21 11:45:33,229: INFO: Pat Burke
+2014-09-21 11:45:44,714: INFO: Trey Burke
+2014-09-21 11:45:54,340: INFO: Alec Burks
+2014-09-21 11:46:04,984: INFO: Antonio Burks
+2014-09-21 11:46:15,714: INFO: Kevin Burleson
+2014-09-21 11:46:28,910: INFO: Caron Butler
+2014-09-21 11:46:43,869: INFO: Jackie Butler
+2014-09-21 11:46:54,196: INFO: Jimmy Butler
+2014-09-21 11:47:05,470: INFO: Mitchell Butler
+2014-09-21 11:47:18,833: INFO: Rasual Butler
+2014-09-21 11:47:34,300: INFO: Dwight Buycks
+2014-09-21 11:47:43,883: INFO: Derrick Byars
+2014-09-21 11:47:53,491: INFO: Andrew Bynum
+2014-09-21 11:48:06,587: INFO: Will Bynum
+2014-09-21 11:48:18,525: INFO: Zarko Cabarkapa
+2014-09-21 11:48:29,525: INFO: Jason Caffey
+2014-09-21 11:48:41,809: INFO: Nick Calathes
+2014-09-21 11:48:51,241: INFO: Jose Calderon
+2014-09-21 11:49:04,177: INFO: Kentavious Caldwell-Pope
+2014-09-21 11:49:13,777: INFO: Marcus Camby
+2014-09-21 11:49:29,854: INFO: Elden Campbell
+2014-09-21 11:49:45,012: INFO: Isaiah Canaan
+2014-09-21 11:49:54,665: INFO: Derrick Caracter
+2014-09-21 11:50:04,539: INFO: Brian Cardinal
+2014-09-21 11:50:18,148: INFO: Geno Carlisle
+2014-09-21 11:50:27,781: INFO: Rodney Carney
+2014-09-21 11:50:39,899: INFO: DeMarre Carroll
+2014-09-21 11:50:52,566: INFO: Matt Carroll
+2014-09-21 11:51:05,677: INFO: Anthony Carter
+2014-09-21 11:51:20,034: INFO: Maurice Carter
+2014-09-21 11:51:31,607: INFO: Vince Carter
+2014-09-21 11:51:46,957: INFO: Michael Carter-Williams
+2014-09-21 11:51:56,674: INFO: Sam Cassell
+2014-09-21 11:52:12,426: INFO: Omri Casspi
+2014-09-21 11:52:23,181: INFO: Kelvin Cato
+2014-09-21 11:52:36,881: INFO: Lionel Chalmers
+2014-09-21 11:52:46,535: INFO: Mario Chalmers
+2014-09-21 11:52:59,041: INFO: Tyson Chandler
+2014-09-21 11:53:13,031: INFO: Wilson Chandler
+2014-09-21 11:53:24,720: INFO: Calbert Cheaney
+2014-09-21 11:53:37,873: INFO: Josh Childress
+2014-09-21 11:53:49,701: INFO: Chris Childs
+2014-09-21 11:54:02,145: INFO: Doug Christie
+2014-09-21 11:54:16,174: INFO: Dionte Christmas
+2014-09-21 11:54:25,633: INFO: Earl Clark
+2014-09-21 11:54:38,171: INFO: Ian Clark
+2014-09-21 11:54:47,665: INFO: Keon Clark
+2014-09-21 11:54:59,779: INFO: Victor Claver
+2014-09-21 11:55:09,800: INFO: Speedy Claxton
+2014-09-21 11:55:22,387: INFO: Mateen Cleaves
+2014-09-21 11:55:33,157: INFO: Norris Cole
+2014-09-21 11:55:44,419: INFO: Derrick Coleman
+2014-09-21 11:55:57,843: INFO: Bimbo Coles
+2014-09-21 11:56:10,874: INFO: Jason Collier
+2014-09-21 11:56:21,433: INFO: Jarron Collins
+2014-09-21 11:56:34,268: INFO: Jason Collins
+2014-09-21 11:56:49,046: INFO: Mardy Collins
+2014-09-21 11:56:59,551: INFO: Sherron Collins
+2014-09-21 11:57:09,215: INFO: Darren Collison
+2014-09-21 11:57:21,048: INFO: Nick Collison
+2014-09-21 11:57:33,317: INFO: Mike Conley
+2014-09-21 11:57:45,101: INFO: Will Conroy
+2014-09-21 11:57:55,681: INFO: Brian Cook
+2014-09-21 11:58:08,990: INFO: Daequan Cook
+2014-09-21 11:58:21,464: INFO: Omar Cook
+2014-09-21 11:58:31,358: INFO: Chris Copeland
+2014-09-21 11:58:42,794: INFO: Marcus Cousin
+2014-09-21 11:58:52,427: INFO: DeMarcus Cousins
+2014-09-21 11:59:02,707: INFO: Robert Covington
+2014-09-21 11:59:12,465: INFO: Allen Crabbe
+2014-09-21 11:59:21,950: INFO: Chris Crawford
+2014-09-21 11:59:32,807: INFO: Jamal Crawford
+2014-09-21 11:59:46,966: INFO: Joe Crawford
+2014-09-21 11:59:56,500: INFO: Jordan Crawford
+2014-09-21 12:00:08,677: INFO: Joe Crispin
+2014-09-21 12:00:18,824: INFO: Javaris Crittenton
+2014-09-21 12:00:29,498: INFO: Austin Croshere
+2014-09-21 12:00:42,933: INFO: John Crotty
+2014-09-21 12:00:56,620: INFO: Jae Crowder
+2014-09-21 12:01:07,001: INFO: Vonteego Cummings
+2014-09-21 12:01:18,051: INFO: Dante Cunningham
+2014-09-21 12:01:30,196: INFO: Jared Cunningham
+2014-09-21 12:01:40,729: INFO: Dell Curry
+2014-09-21 12:01:54,942: INFO: Eddy Curry
+2014-09-21 12:02:06,800: INFO: JamesOn Curry
+2014-09-21 12:02:16,365: INFO: Michael Curry
+2014-09-21 12:02:29,495: INFO: Seth Curry
+2014-09-21 12:02:39,649: INFO: Stephen Curry
+2014-09-21 12:02:51,408: INFO: Samuel Dalembert
+2014-09-21 12:03:04,636: INFO: Erick Dampier
+2014-09-21 12:03:18,356: INFO: Antonio Daniels
+2014-09-21 12:03:32,626: INFO: Erik Daniels
+2014-09-21 12:03:42,134: INFO: Marquis Daniels
+2014-09-21 12:03:55,385: INFO: Troy Daniels
+2014-09-21 12:04:05,538: INFO: Luigi Datome
+2014-09-21 12:04:14,980: INFO: Jermareo Davidson
+2014-09-21 12:04:24,961: INFO: Brandon Davies
+2014-09-21 12:04:34,526: INFO: Anthony Davis
+2014-09-21 12:04:44,507: INFO: Antonio Davis
+2014-09-21 12:04:58,654: INFO: Baron Davis
+2014-09-21 12:05:13,618: INFO: Dale Davis
+2014-09-21 12:05:33,215: INFO: Ed Davis
+2014-09-21 12:05:45,096: INFO: Emanual Davis
+2014-09-21 12:05:55,983: INFO: Glen Davis
+2014-09-21 12:06:09,614: INFO: Hubert Davis
+2014-09-21 12:06:23,032: INFO: Josh Davis
+2014-09-21 12:06:35,241: INFO: Paul Davis
+2014-09-21 12:06:45,841: INFO: Ricky Davis
+2014-09-21 12:06:59,487: INFO: Eric Dawson
+2014-09-21 12:07:09,400: INFO: Austin Daye
+2014-09-21 12:07:22,166: INFO: Nando De Colo
+2014-09-21 12:07:33,712: INFO: Andrew DeClercq
+2014-09-21 12:07:46,384: INFO: Dewayne Dedmon
+2014-09-21 12:07:56,933: INFO: Vinny Del Negro
+2014-09-21 12:08:11,196: INFO: Carlos Delfino
+2014-09-21 12:08:24,498: INFO: Tony Delk
+2014-09-21 12:08:39,481: INFO: Matthew Dellavedova
+2014-09-21 12:08:49,079: INFO: Luol Deng
+2014-09-21 12:09:02,896: INFO: Justin Dentmon
+2014-09-21 12:09:14,254: INFO: DeMar DeRozan
+2014-09-21 12:09:25,469: INFO: Derrick Dial
+2014-09-21 12:09:37,267: INFO: Boris Diaw
+2014-09-21 12:09:51,433: INFO: Yakhouba Diawara
+2014-09-21 12:10:03,157: INFO: Guillermo Diaz
+2014-09-21 12:10:13,229: INFO: Dan Dickau
+2014-09-21 12:10:25,334: INFO: Kaniel Dickens
+2014-09-21 12:10:35,861: INFO: Michael Dickerson
+2014-09-21 12:10:47,115: INFO: Travis Diener
+2014-09-21 12:10:59,028: INFO: Gorgui Dieng
+2014-09-21 12:11:09,219: INFO: Ike Diogu
+2014-09-21 12:11:21,309: INFO: DeSagana Diop
+2014-09-21 12:11:34,742: INFO: Vlade Divac
+2014-09-21 12:11:49,467: INFO: Juan Dixon
+2014-09-21 12:12:03,011: INFO: Michael Doleac
+2014-09-21 12:12:17,370: INFO: Keyon Dooling
+2014-09-21 12:12:31,723: INFO: Joey Dorsey
+2014-09-21 12:12:43,002: INFO: Quincy Douby
+2014-09-21 12:14:02,471: INFO: Toney Douglas
+2014-09-21 12:14:16,338: INFO: Chris Douglas-Roberts
+2014-09-21 12:14:28,247: INFO: Zabian Dowdell
+2014-09-21 12:14:37,851: INFO: Goran Dragic
+2014-09-21 12:14:50,137: INFO: Bryce Drew
+2014-09-21 12:15:02,484: INFO: Predrag Drobnjak
+2014-09-21 12:15:14,533: INFO: Andre Drummond
+2014-09-21 12:15:24,531: INFO: Chris Dudley
+2014-09-21 12:15:39,796: INFO: Jared Dudley
+2014-09-21 12:15:52,707: INFO: Chris Duhon
+2014-09-21 12:16:05,873: INFO: Tim Duncan
+2014-09-21 12:16:21,691: INFO: Mike Dunleavy
+2014-09-21 12:16:23,215: INFO: shit the bed on shooting: Mike Dunleavy, url: http://www.basketball-reference.com/players/d/dunlemi01.html
+2014-09-21 12:29:38,935: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 78, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 78, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 12:30:27,490: INFO: Called with from_scratch=False
+2014-09-21 12:30:27,577: INFO: Mike Dunleavy
+2014-09-21 12:30:29,401: INFO: shit the bed on shooting: Mike Dunleavy, url: http://www.basketball-reference.com/players/d/dunlemi01.html
+2014-09-21 12:30:33,489: INFO: shit the bed on pbp: Mike Dunleavy, url: http://www.basketball-reference.com/players/d/dunlemi01.html
+2014-09-21 12:30:40,287: INFO: Mike Dunleavy
+2014-09-21 12:30:53,823: INFO: Ronald Dupree
+2014-09-21 12:31:05,778: INFO: Kevin Durant
+2014-09-21 12:31:17,860: INFO: Jerome Dyson
+2014-09-21 12:31:27,406: INFO: Devin Ebanks
+2014-09-21 12:31:38,375: INFO: Ndudi Ebi
+2014-09-21 12:31:47,938: INFO: Corsley Edwards
+2014-09-21 12:31:57,548: INFO: John Edwards
+2014-09-21 12:32:07,739: INFO: Shane Edwards
+2014-09-21 12:32:17,185: INFO: Howard Eisley
+2014-09-21 12:32:31,170: INFO: Obinna Ekezie
+2014-09-21 12:32:42,566: INFO: Wayne Ellington
+2014-09-21 12:32:54,515: INFO: LaPhonso Ellis
+2014-09-21 12:33:06,775: INFO: Monta Ellis
+2014-09-21 12:33:19,418: INFO: Francisco Elson
+2014-09-21 12:34:40,790: INFO: Melvin Ely
+2014-09-21 12:34:53,682: INFO: Andre Emmett
+2014-09-21 12:35:04,046: INFO: Kim English
+2014-09-21 12:35:13,643: INFO: Semih Erden
+2014-09-21 12:35:24,321: INFO: Evan Eschmeyer
+2014-09-21 12:35:35,604: INFO: Jeremy Evans
+2014-09-21 12:35:46,802: INFO: Maurice Evans
+2014-09-21 12:36:01,132: INFO: Reggie Evans
+2014-09-21 12:36:15,501: INFO: Tyreke Evans
+2014-09-21 12:36:26,188: INFO: Daniel Ewing
+2014-09-21 12:36:36,553: INFO: Patrick Ewing
+2014-09-21 12:36:51,242: INFO: Patrick Ewing
+2014-09-21 12:37:01,405: INFO: Patrick Ewing
+2014-09-21 12:37:15,802: INFO: Patrick Ewing
+2014-09-21 12:37:25,995: INFO: Christian Eyenga
+2014-09-21 12:37:36,991: INFO: Festus Ezeli
+2014-09-21 12:37:47,240: INFO: Kenneth Faried
+2014-09-21 12:37:58,356: INFO: Jordan Farmar
+2014-09-21 12:38:10,572: INFO: Desmon Farmer
+2014-09-21 12:38:20,613: INFO: Vitor Faverani
+2014-09-21 12:38:30,022: INFO: Derrick Favors
+2014-09-21 12:38:41,481: INFO: Nick Fazekas
+2014-09-21 12:38:52,037: INFO: Carrick Felix
+2014-09-21 12:39:01,806: INFO: Noel Felix
+2014-09-21 12:39:11,319: INFO: Raymond Felton
+2014-09-21 12:39:24,426: INFO: Desmond Ferguson
+2014-09-21 12:39:34,092: INFO: Rudy Fernandez
+2014-09-21 12:39:45,447: INFO: Danny Ferry
+2014-09-21 12:39:58,496: INFO: Kyrylo Fesenko
+2014-09-21 12:40:09,762: INFO: Landry Fields
+2014-09-21 12:40:21,371: INFO: Michael Finley
+2014-09-21 12:40:35,986: INFO: Derek Fisher
+2014-09-21 12:40:51,952: INFO: Gerald Fitch
+2014-09-21 12:41:01,699: INFO: Marcus Fizer
+2014-09-21 12:41:12,628: INFO: Luis Flores
+2014-09-21 12:41:22,750: INFO: Jonny Flynn
+2014-09-21 12:41:33,446: INFO: Isaac Fontaine
+2014-09-21 12:41:43,032: INFO: Jeff Foote
+2014-09-21 12:41:52,569: INFO: Gary Forbes
+2014-09-21 12:42:03,799: INFO: Alton Ford
+2014-09-21 12:42:14,251: INFO: Sharrod Ford
+2014-09-21 12:42:23,896: INFO: T.J. Ford
+2014-09-21 12:42:36,403: INFO: Joseph Forte
+2014-09-21 12:42:46,479: INFO: Courtney Fortson
+2014-09-21 12:42:57,055: INFO: Danny Fortson
+2014-09-21 12:43:09,226: INFO: Greg Foster
+2014-09-21 12:43:22,991: INFO: Jeff Foster
+2014-09-21 12:43:35,932: INFO: Antonis Fotsis
+2014-09-21 12:43:45,350: INFO: Evan Fournier
+2014-09-21 12:43:55,604: INFO: Tremaine Fowlkes
+2014-09-21 12:44:06,687: INFO: Rick Fox
+2014-09-21 12:44:19,790: INFO: Randy Foye
+2014-09-21 12:44:32,086: INFO: Adonal Foyle
+2014-09-21 12:44:45,060: INFO: Richie Frahm
+2014-09-21 12:44:56,133: INFO: Steve Francis
+2014-09-21 12:45:09,073: INFO: Jamaal Franklin
+2014-09-21 12:45:20,592: INFO: Jimmer Fredette
+2014-09-21 12:45:31,194: INFO: Joel Freeland
+2014-09-21 12:45:41,372: INFO: Matt Freije
+2014-09-21 12:45:54,435: INFO: Channing Frye
+2014-09-21 12:46:07,603: INFO: Hiram Fuller
+2014-09-21 12:46:21,788: INFO: Lawrence Funderburke
+2014-09-21 12:46:33,881: INFO: Dan Gadzuric
+2014-09-21 12:46:47,612: INFO: Deng Gai
+2014-09-21 12:46:57,260: INFO: Reece Gaines
+2014-09-21 12:47:08,276: INFO: Sundiata Gaines
+2014-09-21 12:47:21,714: INFO: Danilo Gallinari
+2014-09-21 12:47:33,331: INFO: Jorge Garbajosa
+2014-09-21 12:47:42,858: INFO: Alex Garcia
+2014-09-21 12:47:53,285: INFO: Francisco Garcia
+2014-09-21 12:48:06,189: INFO: Thomas Gardner
+2014-09-21 12:48:16,938: INFO: Kevin Garnett
+2014-09-21 12:48:32,818: INFO: Dean Garrett
+2014-09-21 12:48:46,056: INFO: Diante Garrett
+2014-09-21 12:48:56,233: INFO: Pat Garrity
+2014-09-21 12:49:08,979: INFO: Marc Gasol
+2014-09-21 12:49:20,609: INFO: Pau Gasol
+2014-09-21 12:49:34,829: INFO: Chris Gatling
+2014-09-21 12:49:37,927: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 77, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 12:52:03,217: INFO: Called with from_scratch=True
+2014-09-21 12:52:07,609: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    df = df.join(df_links)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 3740, in join
+    rsuffix=rsuffix, sort=sort)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 3754, in _join_compat
+    suffixes=(lsuffix, rsuffix), sort=sort)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/tools/merge.py", line 39, in merge
+    return op.get_result()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/tools/merge.py", line 191, in get_result
+    rdata.items, rsuf)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/internals.py", line 3601, in items_overlap_with_suffix
+    to_rename)
+ValueError: columns overlap but no suffix specified: Index([u'player'], dtype='object')
+2014-09-21 12:53:37,993: INFO: Called with from_scratch=True
+2014-09-21 12:54:41,439: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 54, in create_player_table
+    import pdb; pdb.set_trace()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 54, in create_player_table
+    import pdb; pdb.set_trace()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 12:54:59,892: INFO: Called with from_scratch=True
+2014-09-21 12:55:06,450: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 55, in create_player_table
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 12:55:12,677: INFO: Called with from_scratch=True
+2014-09-21 12:57:54,899: INFO: Tariq Abdul-Wahad
+2014-09-21 12:57:56,225: INFO: shit the bed on shooting: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 12:58:00,170: INFO: shit the bed on pbp: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 12:58:04,170: INFO: shit the bed on totals: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 12:58:04,242: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 105, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 12:58:20,321: INFO: Called with from_scratch=False
+2014-09-21 12:58:20,414: INFO: Tariq Abdul-Wahad
+2014-09-21 12:58:21,785: INFO: shit the bed on shooting: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 12:58:57,730: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 80, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 80, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 12:59:43,710: INFO: Called with from_scratch=False
+2014-09-21 12:59:43,810: INFO: Tariq Abdul-Wahad
+2014-09-21 12:59:56,526: INFO: Shareef Abdur-Rahim
+2014-09-21 13:00:09,163: INFO: Alex Acker
+2014-09-21 13:00:19,606: INFO: Quincy Acy
+2014-09-21 13:00:29,937: INFO: Hassan Adams
+2014-09-21 13:00:40,707: INFO: Steven Adams
+2014-09-21 13:00:50,763: INFO: Jeff Adrien
+2014-09-21 13:01:01,741: INFO: Arron Afflalo
+2014-09-21 13:01:14,008: INFO: Maurice Ager
+2014-09-21 13:01:25,534: INFO: Blake Ahearn
+2014-09-21 13:01:36,494: INFO: Alexis Ajinca
+2014-09-21 13:01:47,302: INFO: Josh Akognon
+2014-09-21 13:01:56,678: INFO: Solomon Alabi
+2014-09-21 13:02:06,512: INFO: Cole Aldrich
+2014-09-21 13:02:18,260: INFO: LaMarcus Aldridge
+2014-09-21 13:02:30,049: INFO: Cory Alexander
+2014-09-21 13:02:41,712: INFO: Courtney Alexander
+2014-09-21 13:02:53,181: INFO: Joe Alexander
+2014-09-21 13:03:03,214: INFO: Victor Alexander
+2014-09-21 13:03:14,503: INFO: Lavoy Allen
+2014-09-21 13:03:26,041: INFO: Malik Allen
+2014-09-21 13:03:40,726: INFO: Ray Allen
+2014-09-21 13:03:56,416: INFO: Tony Allen
+2014-09-21 13:04:10,178: INFO: Lance Allred
+2014-09-21 13:04:19,891: INFO: Morris Almond
+2014-09-21 13:04:30,309: INFO: Rafer Alston
+2014-09-21 13:04:44,469: INFO: John Amaechi
+2014-09-21 13:04:56,366: INFO: Al-Farouq Aminu
+2014-09-21 13:05:07,276: INFO: Louis Amundson
+2014-09-21 13:05:21,199: INFO: Chris Andersen
+2014-09-21 13:05:34,532: INFO: David Andersen
+2014-09-21 13:05:44,902: INFO: Alan Anderson
+2014-09-21 13:05:56,455: INFO: Antonio Anderson
+2014-09-21 13:06:06,028: INFO: Derek Anderson
+2014-09-21 13:06:19,774: INFO: James Anderson
+2014-09-21 13:06:31,588: INFO: Kenny Anderson
+2014-09-21 13:06:46,604: INFO: Nick Anderson
+2014-09-21 13:06:59,324: INFO: Ryan Anderson
+2014-09-21 13:07:11,719: INFO: Shandon Anderson
+2014-09-21 13:07:24,889: INFO: Martynas Andriuskevicius
+2014-09-21 13:07:34,285: INFO: Giannis Antetokounmpo
+2014-09-21 13:07:43,790: INFO: Carmelo Anthony
+2014-09-21 13:07:57,975: INFO: Greg Anthony
+2014-09-21 13:08:11,724: INFO: Joel Anthony
+2014-09-21 13:08:24,550: INFO: Pero Antic
+2014-09-21 13:08:34,488: INFO: Rafael Araujo
+2014-09-21 13:08:45,658: INFO: Robert Archibald
+2014-09-21 13:08:56,289: INFO: Gilbert Arenas
+2014-09-21 13:09:10,012: INFO: Trevor Ariza
+2014-09-21 13:09:24,097: INFO: Brandon Armstrong
+2014-09-21 13:09:34,654: INFO: Darrell Armstrong
+2014-09-21 13:09:48,936: INFO: Hilton Armstrong
+2014-09-21 13:10:02,221: INFO: Carlos Arroyo
+2014-09-21 13:10:17,004: INFO: Darrell Arthur
+2014-09-21 13:10:28,603: INFO: Omer Asik
+2014-09-21 13:10:40,308: INFO: Chucky Atkins
+2014-09-21 13:10:54,756: INFO: Stacey Augmon
+2014-09-21 13:11:09,599: INFO: D.J. Augustin
+2014-09-21 13:11:22,001: INFO: James Augustine
+2014-09-21 13:11:32,423: INFO: Isaac Austin
+2014-09-21 13:11:44,813: INFO: William Avery
+2014-09-21 13:11:55,185: INFO: Gustavo Ayon
+2014-09-21 13:12:06,841: INFO: Jeff Ayres
+2014-09-21 13:12:19,286: INFO: Kelenna Azubuike
+2014-09-21 13:13:12,554: INFO: Chris Babb
+2014-09-21 13:13:22,512: INFO: Luke Babbitt
+2014-09-21 13:13:33,823: INFO: Dalibor Bagaric
+2014-09-21 13:13:43,799: INFO: Maurice Baker
+2014-09-21 13:13:54,268: INFO: Vin Baker
+2014-09-21 13:14:09,731: INFO: Renaldo Balkman
+2014-09-21 13:14:22,397: INFO: Marcus Banks
+2014-09-21 13:14:36,597: INFO: Leandro Barbosa
+2014-09-21 13:14:51,379: INFO: Jose Barea
+2014-09-21 13:15:04,494: INFO: Andrea Bargnani
+2014-09-21 13:15:17,000: INFO: Erick Barkley
+2014-09-21 13:15:27,344: INFO: Harrison Barnes
+2014-09-21 13:15:38,104: INFO: Matt Barnes
+2014-09-21 13:15:53,309: INFO: Andre Barrett
+2014-09-21 13:16:05,073: INFO: Earl Barron
+2014-09-21 13:16:18,907: INFO: Dana Barros
+2014-09-21 13:16:33,487: INFO: Brent Barry
+2014-09-21 13:16:48,706: INFO: Jon Barry
+2014-09-21 13:17:03,954: INFO: Will Barton
+2014-09-21 13:17:14,390: INFO: Eddie Basden
+2014-09-21 13:17:23,663: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 105, in scrape_player_data
+    if successes == 3:
+KeyboardInterrupt
+2014-09-21 13:23:48,703: INFO: Called with from_scratch=False
+2014-09-21 13:23:48,819: INFO: Tariq Abdul-Wahad
+2014-09-21 13:24:00,982: INFO: Shareef Abdur-Rahim
+2014-09-21 13:24:13,771: INFO: Alex Acker
+2014-09-21 13:24:24,170: INFO: Quincy Acy
+2014-09-21 13:24:34,487: INFO: Hassan Adams
+2014-09-21 13:24:45,141: INFO: Steven Adams
+2014-09-21 13:24:55,245: INFO: Jeff Adrien
+2014-09-21 13:25:06,321: INFO: Arron Afflalo
+2014-09-21 13:25:18,834: INFO: Maurice Ager
+2014-09-21 13:25:30,257: INFO: Blake Ahearn
+2014-09-21 13:25:41,202: INFO: Alexis Ajinca
+2014-09-21 13:25:52,004: INFO: Josh Akognon
+2014-09-21 13:26:01,824: INFO: Solomon Alabi
+2014-09-21 13:26:11,631: INFO: Cole Aldrich
+2014-09-21 13:26:23,263: INFO: LaMarcus Aldridge
+2014-09-21 13:26:35,778: INFO: Cory Alexander
+2014-09-21 13:26:47,280: INFO: Courtney Alexander
+2014-09-21 13:26:58,600: INFO: Joe Alexander
+2014-09-21 13:27:08,665: INFO: Victor Alexander
+2014-09-21 13:27:19,903: INFO: Lavoy Allen
+2014-09-21 13:27:31,328: INFO: Malik Allen
+2014-09-21 13:27:45,061: INFO: Ray Allen
+2014-09-21 13:28:00,477: INFO: Tony Allen
+2014-09-21 13:28:13,843: INFO: Lance Allred
+2014-09-21 13:28:23,364: INFO: Morris Almond
+2014-09-21 13:28:33,699: INFO: Rafer Alston
+2014-09-21 13:28:47,555: INFO: John Amaechi
+2014-09-21 13:28:59,669: INFO: Al-Farouq Aminu
+2014-09-21 13:29:10,150: INFO: Louis Amundson
+2014-09-21 13:29:23,673: INFO: Chris Andersen
+2014-09-21 13:29:36,757: INFO: David Andersen
+2014-09-21 13:29:47,058: INFO: Alan Anderson
+2014-09-21 13:29:58,414: INFO: Antonio Anderson
+2014-09-21 13:30:08,397: INFO: Derek Anderson
+2014-09-21 13:30:22,145: INFO: James Anderson
+2014-09-21 13:30:34,186: INFO: Kenny Anderson
+2014-09-21 13:30:48,843: INFO: Nick Anderson
+2014-09-21 13:31:01,363: INFO: Ryan Anderson
+2014-09-21 13:31:13,495: INFO: Shandon Anderson
+2014-09-21 13:31:26,551: INFO: Martynas Andriuskevicius
+2014-09-21 13:31:36,027: INFO: Giannis Antetokounmpo
+2014-09-21 13:31:45,454: INFO: Carmelo Anthony
+2014-09-21 13:31:59,275: INFO: Greg Anthony
+2014-09-21 13:32:12,380: INFO: Joel Anthony
+2014-09-21 13:32:24,616: INFO: Pero Antic
+2014-09-21 13:32:34,531: INFO: Rafael Araujo
+2014-09-21 13:32:45,401: INFO: Robert Archibald
+2014-09-21 13:32:56,014: INFO: Gilbert Arenas
+2014-09-21 13:33:09,024: INFO: Trevor Ariza
+2014-09-21 13:33:22,283: INFO: Brandon Armstrong
+2014-09-21 13:33:32,543: INFO: Darrell Armstrong
+2014-09-21 13:33:46,062: INFO: Hilton Armstrong
+2014-09-21 13:33:58,759: INFO: Carlos Arroyo
+2014-09-21 13:34:12,946: INFO: Darrell Arthur
+2014-09-21 13:34:24,221: INFO: Omer Asik
+2014-09-21 13:34:35,714: INFO: Chucky Atkins
+2014-09-21 13:34:49,399: INFO: Stacey Augmon
+2014-09-21 13:35:03,356: INFO: D.J. Augustin
+2014-09-21 13:35:15,934: INFO: James Augustine
+2014-09-21 13:35:26,087: INFO: Isaac Austin
+2014-09-21 13:35:38,294: INFO: William Avery
+2014-09-21 13:35:48,678: INFO: Gustavo Ayon
+2014-09-21 13:36:00,030: INFO: Jeff Ayres
+2014-09-21 13:36:11,745: INFO: Kelenna Azubuike
+2014-09-21 13:36:23,599: INFO: Chris Babb
+2014-09-21 13:36:33,166: INFO: Luke Babbitt
+2014-09-21 13:36:43,576: INFO: Dalibor Bagaric
+2014-09-21 13:36:53,289: INFO: Maurice Baker
+2014-09-21 13:37:03,421: INFO: Vin Baker
+2014-09-21 13:37:17,217: INFO: Renaldo Balkman
+2014-09-21 13:37:28,972: INFO: Marcus Banks
+2014-09-21 13:37:42,001: INFO: Leandro Barbosa
+2014-09-21 13:37:55,290: INFO: Jose Barea
+2014-09-21 13:38:08,068: INFO: Andrea Bargnani
+2014-09-21 13:38:20,483: INFO: Erick Barkley
+2014-09-21 13:38:30,315: INFO: Harrison Barnes
+2014-09-21 13:38:40,725: INFO: Matt Barnes
+2014-09-21 13:38:46,331: INFO: shit the bed on pbp: Matt Barnes, url: http://www.basketball-reference.com/players/b/barnema02.html
+2014-09-21 13:38:47,850: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 86, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 13:42:13,574: INFO: Called with from_scratch=False
+2014-09-21 13:42:13,746: INFO: Matt Barnes
+2014-09-21 13:42:17,954: INFO: shit the bed on shooting: Matt Barnes, url: http://www.basketball-reference.com/players/b/barnema02.html
+2014-09-21 13:42:18,618: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 38, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 94, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 13:42:31,169: INFO: Called with from_scratch=False
+2014-09-21 13:42:31,253: INFO: Tariq Abdul-Wahad
+2014-09-21 13:42:43,312: INFO: Shareef Abdur-Rahim
+2014-09-21 13:42:56,156: INFO: Alex Acker
+2014-09-21 13:43:06,586: INFO: Quincy Acy
+2014-09-21 13:43:16,926: INFO: Hassan Adams
+2014-09-21 13:43:28,104: INFO: Steven Adams
+2014-09-21 13:43:38,749: INFO: Jeff Adrien
+2014-09-21 13:43:50,327: INFO: Arron Afflalo
+2014-09-21 13:44:03,537: INFO: Maurice Ager
+2014-09-21 13:44:15,674: INFO: Blake Ahearn
+2014-09-21 13:44:27,320: INFO: Alexis Ajinca
+2014-09-21 13:44:38,736: INFO: Josh Akognon
+2014-09-21 13:44:48,336: INFO: Solomon Alabi
+2014-09-21 13:44:58,324: INFO: Cole Aldrich
+2014-09-21 13:45:10,772: INFO: LaMarcus Aldridge
+2014-09-21 13:45:23,590: INFO: Cory Alexander
+2014-09-21 13:45:36,629: INFO: Courtney Alexander
+2014-09-21 13:45:48,779: INFO: Joe Alexander
+2014-09-21 13:45:59,238: INFO: Victor Alexander
+2014-09-21 13:46:11,117: INFO: Lavoy Allen
+2014-09-21 13:46:24,651: INFO: Malik Allen
+2014-09-21 13:46:42,503: INFO: Ray Allen
+2014-09-21 13:46:59,271: INFO: Tony Allen
+2014-09-21 13:47:15,184: INFO: Lance Allred
+2014-09-21 13:47:25,017: INFO: Morris Almond
+2014-09-21 13:47:35,654: INFO: Rafer Alston
+2014-09-21 13:47:51,029: INFO: John Amaechi
+2014-09-21 13:48:03,506: INFO: Al-Farouq Aminu
+2014-09-21 13:48:14,518: INFO: Louis Amundson
+2014-09-21 13:48:29,171: INFO: Chris Andersen
+2014-09-21 13:48:43,128: INFO: David Andersen
+2014-09-21 13:48:54,391: INFO: Alan Anderson
+2014-09-21 13:49:02,299: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 38, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 103, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+KeyboardInterrupt
+2014-09-21 14:12:38,735: INFO: Called with from_scratch=False
+2014-09-21 14:12:38,785: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (IntegrityError) (1215, 'Cannot add foreign key constraint') '\nCREATE TABLE shooting (\n\tid INTEGER NOT NULL AUTO_INCREMENT, \n\tplayer_key VARCHAR(20), \n\tseason TEXT, \n\tseason_start INTEGER, \n\tage INTEGER, \n\tteam VARCHAR(90), \n\tleague TEXT, \n\tpos TEXT, \n\tgames INTEGER, \n\tminutes INTEGER, \n\tfg_pc FLOAT(8), \n\tavg_dist FLOAT(8), \n\tpc_fga_2p FLOAT(8), \n\tpc_2pfga_0_3 FLOAT(8), \n\tpc_2pfga_3_10 FLOAT(8), \n\tpc_2pfga_10_16 FLOAT(8), \n\tpc_2pfga_16plus FLOAT(8), \n\tpc_fga_3p FLOAT(8), \n\tfgpc_2p FLOAT(8), \n\tfgpc_2p_0_3 FLOAT(8), \n\tfgpc_2p_3_10 FLOAT(8), \n\tfgpc_2p_10_16 FLOAT(8), \n\tfgpc_2p_16plus FLOAT(8), \n\tfgpc_3p FLOAT(8), \n\tpc_2pfg_assisted FLOAT(8), \n\tpc_fga_dunks FLOAT(8), \n\tn_dunks INTEGER, \n\tpc_3pfg_assisted FLOAT(8), \n\tpc_3pfga_corner FLOAT(8), \n\tfgpc_3pfga_corner FLOAT(8), \n\theaves_att INTEGER, \n\theaves_made INTEGER, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(player_key, season_start) REFERENCES seasons (player_key, season_start)\n)\n\n' ()
+2014-09-21 14:13:31,679: INFO: Called with from_scratch=False
+2014-09-21 14:13:31,700: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (OperationalError) (1075, 'Incorrect table definition; there can be only one auto column and it must be defined as a key') '\nCREATE TABLE seasons (\n\tplayer_key VARCHAR(20) NOT NULL, \n\tseason_start INTEGER NOT NULL AUTO_INCREMENT, \n\tPRIMARY KEY (player_key, season_start), \n\tFOREIGN KEY(player_key) REFERENCES players (player_key)\n)\n\n' ()
+2014-09-21 14:23:24,941: INFO: Called with from_scratch=False
+2014-09-21 14:23:25,005: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (OperationalError) (1075, 'Incorrect table definition; there can be only one auto column and it must be defined as a key') '\nCREATE TABLE seasons (\n\tplayer_key VARCHAR(20) NOT NULL, \n\tseason_start INTEGER NOT NULL AUTO_INCREMENT, \n\tPRIMARY KEY (player_key, season_start)\n)\n\n' ()
+2014-09-21 14:24:38,911: INFO: Called with from_scratch=False
+2014-09-21 14:24:38,979: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (IntegrityError) (1215, 'Cannot add foreign key constraint') '\nCREATE TABLE totals (\n\tid INTEGER NOT NULL AUTO_INCREMENT, \n\tplayer_key VARCHAR(20), \n\tseason TEXT, \n\tseason_start INTEGER, \n\tage INTEGER, \n\tteam VARCHAR(90), \n\tleague TEXT, \n\tpos TEXT, \n\tgames INTEGER, \n\tgames_started INTEGER, \n\tminutes INTEGER, \n\tfg INTEGER, \n\tfga INTEGER, \n\tfgpc FLOAT(8), \n\tfg3p INTEGER, \n\tfga3p INTEGER, \n\tfgpc_3p FLOAT(8), \n\tfg2p INTEGER, \n\tfga2p INTEGER, \n\tfgpc_2p FLOAT(8), \n\tft INTEGER, \n\tfta INTEGER, \n\tftpc FLOAT(8), \n\torb INTEGER, \n\tdrb INTEGER, \n\ttrb INTEGER, \n\tast INTEGER, \n\tstl INTEGER, \n\tblk INTEGER, \n\ttov INTEGER, \n\tpf INTEGER, \n\tpts INTEGER, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(player_key) REFERENCES players (player_key), \n\tFOREIGN KEY(season_start) REFERENCES seasons (season_start)\n)\n\n' ()
+2014-09-21 14:35:38,533: INFO: Called with from_scratch=False
+2014-09-21 14:35:38,656: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (IntegrityError) (1215, 'Cannot add foreign key constraint') '\nCREATE TABLE playbyplay (\n\tid INTEGER NOT NULL AUTO_INCREMENT, \n\tplayer_key VARCHAR(20), \n\tseason TEXT, \n\tseason_start INTEGER, \n\tage INTEGER, \n\tteam VARCHAR(90), \n\tleague TEXT, \n\tpos TEXT, \n\tgames INTEGER, \n\tminutes INTEGER, \n\tpos_pg_pc FLOAT(8), \n\tpos_sg_pc FLOAT(8), \n\tpos_sf_pc FLOAT(8), \n\tpos_pf_pc FLOAT(8), \n\tpos_c_pc FLOAT(8), \n\tplus_minus_per_100_on_court FLOAT(8), \n\tplus_minus_per_100_off_court FLOAT(8), \n\ttos_off_foul INTEGER, \n\ttos_bad_pass INTEGER, \n\ttos_lost_ball INTEGER, \n\ttos_other INTEGER, \n\tpoints_generated_assist INTEGER, \n\tand1 INTEGER, \n\tsfdrawn INTEGER, \n\tfga_blocked INTEGER, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(player_key, season_start) REFERENCES seasons (player_key, season_start), \n\tFOREIGN KEY(season_start) REFERENCES seasons (season_start)\n)\n\n' ()
+2014-09-21 14:36:01,562: INFO: Called with from_scratch=False
+2014-09-21 14:36:01,686: INFO: Alan Anderson
+2014-09-21 14:36:13,493: INFO: Antonio Anderson
+2014-09-21 14:36:23,035: INFO: Derek Anderson
+2014-09-21 14:36:36,201: INFO: James Anderson
+2014-09-21 14:36:47,963: INFO: Kenny Anderson
+2014-09-21 14:37:02,350: INFO: Nick Anderson
+2014-09-21 14:37:16,600: INFO: Ryan Anderson
+2014-09-21 14:37:29,442: INFO: Shandon Anderson
+2014-09-21 14:37:43,682: INFO: Martynas Andriuskevicius
+2014-09-21 14:37:53,456: INFO: Giannis Antetokounmpo
+2014-09-21 14:38:03,524: INFO: Carmelo Anthony
+2014-09-21 14:38:19,044: INFO: Greg Anthony
+2014-09-21 14:38:33,066: INFO: Joel Anthony
+2014-09-21 14:38:46,131: INFO: Pero Antic
+2014-09-21 14:38:56,550: INFO: Rafael Araujo
+2014-09-21 14:39:07,988: INFO: Robert Archibald
+2014-09-21 14:39:19,375: INFO: Gilbert Arenas
+2014-09-21 14:39:33,788: INFO: Trevor Ariza
+2014-09-21 14:39:48,663: INFO: Brandon Armstrong

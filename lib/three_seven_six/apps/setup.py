@@ -14,6 +14,7 @@ WAIT_BETWEEN_REQUESTS = 2.6
 PLAYERS_URL = 'http://www.basketball-reference.com/players/'
 MUST_HAVE_PLAYED_SINCE = 2001
 
+
 class App(application.Application):
     def app_name(self):
         return 'setup'
@@ -42,15 +43,15 @@ class App(application.Application):
         self.mysql.commit()
         all_players = []
         for letter in list(string.ascii_lowercase):
+            if letter == 'x':
+                continue
             url = PLAYERS_URL + letter + '/'
-            try:
-                df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
-            except:
-                self.info('Failed to find or parse table on page: %s' % url)
+            df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
             time.sleep(WAIT_BETWEEN_REQUESTS)
-            df_links = bbalref_scraper.scrape_hrefs_from_player_table(url,
-                                                                      bbalref_scraper.PLAYERS.dom_id)
-            df = pd.merge(df, df_links, on='player', how='outer')
+            df_links = bbalref_scraper.scrape_hrefs_from_player_table(url, bbalref_scraper.PLAYERS.dom_id)
+            df_links = df_links.drop('player', axis=1)
+            # df = pd.merge(df, df_links, on='player', how='outer')
+            df = df.join(df_links)
             all_players.append(df)
             time.sleep(WAIT_BETWEEN_REQUESTS)
         df = pd.concat(all_players, ignore_index=True)
@@ -65,43 +66,53 @@ class App(application.Application):
                                                   Player.scraped == False).all()
         for p in players:
             self.info(p.player)
-            try:
-                df_shooting = bbalref_scraper.SHOOTING.fetch_and_clean(p.url)
-                df_shooting['key'] = p.key
-                df_shooting2 = df_shooting.astype(object).where(pd.notnull(df_shooting), None)
-                df_shooting2.to_sql('shooting', con=mysql_db.engine, if_exists='append', index=False)
-            except:
-                self.info('shit the bed on shooting: %s, url: %s' % (p.player, p.url))
-                import pdb; pdb.set_trace()
+            successes = 0
 
-            time.sleep(WAIT_BETWEEN_REQUESTS)
             try:
-                df_pbp = bbalref_scraper.PBP.fetch_and_clean(p.url)
-                df_pbp['key'] = p.key
-                df_pbp2 = df_pbp.astype(object).where(pd.notnull(df_pbp), None)
-                df_pbp2.to_sql('playbyplay', con=mysql_db.engine, if_exists='append', index=False)
-            except:
-                self.info('shit the bed on pbp: %s, url: %s' % (p.player, p.url))
-                import pdb; pdb.set_trace()
+                df_totals = bbalref_scraper.TOTALS.fetch_and_clean(p.url, p.player_key, objectify=True)
 
-            time.sleep(WAIT_BETWEEN_REQUESTS)
-            try:
-                df_totals = bbalref_scraper.TOTALS.fetch_and_clean(p.url)
-                df_totals['key'] = p.key
-                df_totals2 = df_totals.astype(object).where(pd.notnull(df_totals), None)
-                df_totals2.to_sql('totals', con=mysql_db.engine, if_exists='append', index=False)
+                seasons = df_totals[['player_key', 'season_start']]
+                seasons = seasons.drop_duplicates()
+                self.ensure_data_not_already_in_table('seasons', p.player_key)
+                seasons.to_sql('seasons', con=mysql_db.engine, if_exists='append', index=False)
+
+                self.ensure_data_not_already_in_table('totals', p.player_key)
+                df_totals.to_sql('totals', con=mysql_db.engine, if_exists='append', index=False)
+
+                successes += 1
             except:
                 self.info('shit the bed on totals: %s, url: %s' % (p.player, p.url))
-                import pdb; pdb.set_trace()
 
-            p.scraped = True
-            self.mysql.flush()
-            self.mysql.commit()
+            try:
+                df_shooting = bbalref_scraper.SHOOTING.fetch_and_clean(p.url, p.player_key, objectify=True)
+                self.ensure_data_not_already_in_table('shooting', p.player_key)
+                df_shooting.to_sql('shooting', con=mysql_db.engine, if_exists='append', index=False)
+                successes += 1
+            except:
+                self.info('shit the bed on shooting: %s, url: %s' % (p.player, p.url))
+
+            time.sleep(WAIT_BETWEEN_REQUESTS)
+            try:
+                df_pbp = bbalref_scraper.PBP.fetch_and_clean(p.url, p.player_key, objectify=True)
+                self.ensure_data_not_already_in_table('playbyplay', p.player_key)
+                df_pbp.to_sql('playbyplay', con=mysql_db.engine, if_exists='append', index=False)
+                successes += 1
+            except:
+                self.info('shit the bed on pbp: %s, url: %s' % (p.player, p.url))
+
+            time.sleep(WAIT_BETWEEN_REQUESTS)
+
+            if successes == 3:
+                p.scraped = True
+                self.mysql.flush()
+                self.mysql.commit()
             time.sleep(WAIT_BETWEEN_REQUESTS)
 
 
     def ensure_data_not_already_in_table(self, table, player_key):
-        mysql_db.execute(self.mysql, """DELETE FROM %s where key = %s;""" % (table, player_key))
+        mysql_db.execute(self.mysql, """DELETE FROM %s where player_key = '%s';""" % (table, player_key))
+        self.mysql.flush()
+        self.mysql.commit()
 
     def table_exists(self, table):
         results = mysql_db.execute(self.mysql, """SHOW TABLES LIKE '%s';""" % table, df=False)

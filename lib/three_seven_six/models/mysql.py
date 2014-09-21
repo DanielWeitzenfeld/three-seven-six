@@ -3,9 +3,9 @@ import datetime
 from dateutil.relativedelta import relativedelta
 
 from sqlalchemy import func, select, and_, or_, text, Text, Column, Integer, ForeignKey, String, Table, DateTime, Date, \
-    Numeric, Boolean, cast, Float
+    Numeric, Boolean, cast, Float, ForeignKeyConstraint
 from sqlalchemy import Column, Integer, ForeignKey, String, Table
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, mapper
 from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
 from sqlalchemy.sql.expression import case
 
@@ -13,12 +13,14 @@ import three_seven_six
 from three_seven_six.dbs import mysql
 from .mysql_base import MysqlBase
 
+INTERRUPTED_SEASON_THRESHOLD = 40
+
 
 class Player(MysqlBase):
     __tablename__ = "players"
     id = Column(Integer, primary_key=True, autoincrement=True)
     player = Column(Text)
-    key = Column(String(20), index=True)
+    player_key = Column(String(20), index=True)
     from_year = Column(Integer)
     to_year = Column(Integer)
     pos = Column(Text)
@@ -29,9 +31,7 @@ class Player(MysqlBase):
     link = Column(Text)
     scraped = Column(Boolean)
 
-    shooting = relationship("Shooting", cascade="all")
-    pbp = relationship("PlayByPlay", cascade="all")
-    totals = relationship("Totals", cascade="all")
+    seasons = relationship("Season", cascade="all", backref='player')
 
     URL_ROOT = 'http://www.basketball-reference.com'
 
@@ -40,105 +40,152 @@ class Player(MysqlBase):
         return self.URL_ROOT + self.link
 
 
+season_table = Table("seasons",
+                     MysqlBase.metadata,
+                     Column('player_key', String(20), primary_key=True),
+                     Column('season_start', Integer, primary_key=True, autoincrement=False),
+                     ForeignKeyConstraint(['player_key'], ['players.player_key']))
+
+
+class Season(MysqlBase):
+    __table__ = season_table
+    # id = Column(Integer, primary_key=True, autoincrement=True)
+    # player_key = Column(String(20), ForeignKey('players.player_key'), primary_key=True)
+    # season_start = Column(Integer, primary_key=True)
+
+    shooting = relationship("Shooting", cascade='all')
+    pbp = relationship("PlayByPlay", cascade='all')
+    totals = relationship("Totals", cascade='all')
+
+    @hybrid_property
+    def totals_count(self):
+        return len([row for row in self.totals])
+
+
+    @hybrid_property
+    def mid_season_team_switch(self):
+        return self.totals_count > 1
+
+# mapper(Season, season_table)
+
+shooting_table = Table("shooting",
+                       MysqlBase.metadata,
+                       Column('id', Integer, primary_key=True, autoincrement=True),
+                       Column('player_key', String(20)),
+                       Column('season', Text),
+                       Column('season_start', Integer),
+                       Column('age', Integer),
+                       Column('team', String(90), index=True),
+                       Column('league', Text),
+                       Column('pos', Text),
+                       Column('games', Integer),
+                       Column('minutes', Integer),
+                       Column('fg_pc', Float(8)),
+                       Column('avg_dist', Float(8)),
+                       Column('pc_fga_2p', Float(8)),
+                       Column('pc_2pfga_0_3', Float(8)),
+                       Column('pc_2pfga_3_10', Float(8)),
+                       Column('pc_2pfga_10_16', Float(8)),
+                       Column('pc_2pfga_16plus', Float(8)),
+                       Column('pc_fga_3p', Float(8)),
+                       Column('fgpc_2p', Float(8)),
+                       Column('fgpc_2p_0_3', Float(8)),
+                       Column('fgpc_2p_3_10', Float(8)),
+                       Column('fgpc_2p_10_16', Float(8)),
+                       Column('fgpc_2p_16plus', Float(8)),
+                       Column('fgpc_3p', Float(8)),
+                       Column('pc_2pfg_assisted', Float(8)),
+                       Column('pc_fga_dunks', Float(8)),
+                       Column('n_dunks', Integer),
+                       Column('pc_3pfg_assisted', Float(8)),
+                       Column('pc_3pfga_corner', Float(8)),
+                       Column('fgpc_3pfga_corner', Float(8)),
+                       Column('heaves_att', Integer),
+                       Column('heaves_made', Integer),
+                       ForeignKeyConstraint(['player_key', 'season_start'],
+                                            ['seasons.player_key', 'seasons.season_start'])
+)
+
+
 class Shooting(MysqlBase):
-    __tablename__ = "shooting"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    key = Column(String(20), ForeignKey('players.key'))
-    season = Column(Text)
-    season_start = Column(Integer, index=True)
-    age = Column(Integer)
-    team = Column(String(50), index=True)
-    league = Column(Text)
-    pos = Column(Text)
-    games = Column(Integer)
-    minutes = Column(Integer)
-    fg_pc = Column(Float(8))
-    avg_dist = Column(Float(8))
-    pc_fga_2p = Column(Float(8))
-    pc_2pfga_0_3 = Column(Float(8))
-    pc_2pfga_3_10 = Column(Float(8))
-    pc_2pfga_10_16 = Column(Float(8))
-    pc_2pfga_16plus = Column(Float(8))
-    pc_fga_3p = Column(Float(8))
-    fgpc_2p = Column(Float(8))
-    fgpc_2p_0_3 = Column(Float(8))
-    fgpc_2p_3_10 = Column(Float(8))
-    fgpc_2p_10_16 = Column(Float(8))
-    fgpc_2p_16plus = Column(Float(8))
-    fgpc_3p = Column(Float(8))
-    pc_2pfg_assisted = Column(Float(8))
-    pc_fga_dunks = Column(Float(8))
-    n_dunks = Column(Integer)
-    pc_3pfg_assisted = Column(Float(8))
-    pc_3pfga_corner = Column(Float(8))
-    fgpc_3pfga_corner = Column(Float(8))
-    heaves_att = Column(Integer)
-    heaves_made = Column(Integer)
+    __table__ = shooting_table
+
+
+pbp_table = Table('playbyplay',
+                  MysqlBase.metadata,
+                  Column('id', Integer, primary_key=True, autoincrement=True),
+                  Column('player_key', String(20)),
+                  Column('season', Text),
+                  Column('season_start', Integer),
+                  Column('age', Integer),
+                  Column('team', String(90), index=True),
+                  Column('league', Text),
+                  Column('pos', Text),
+                  Column('games', Integer),
+                  Column('minutes', Integer),
+                  Column('pos_pg_pc', Float(8)),
+                  Column('pos_sg_pc', Float(8)),
+                  Column('pos_sf_pc', Float(8)),
+                  Column('pos_pf_pc', Float(8)),
+                  Column('pos_c_pc', Float(8)),
+                  Column('plus_minus_per_100_on_court', Float(8)),
+                  Column('plus_minus_per_100_off_court', Float(8)),
+                  Column('tos_off_foul', Integer),
+                  Column('tos_bad_pass', Integer),
+                  Column('tos_lost_ball', Integer),
+                  Column('tos_other', Integer),
+                  Column('points_generated_assist', Integer),
+                  Column('and1', Integer),
+                  Column('sfdrawn', Integer),
+                  Column('fga_blocked', Integer),
+                  ForeignKeyConstraint(['player_key', 'season_start'],
+                                       ['seasons.player_key', 'seasons.season_start'])
+                  )
 
 
 class PlayByPlay(MysqlBase):
-    __tablename__ = "playbyplay"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    key = Column(String(20), ForeignKey('players.key'))
-    season = Column(Text)
-    season_start = Column(Integer, index=True)
-    age = Column(Integer)
-    team = Column(String(50), index=True)
-    league = Column(Text)
-    pos = Column(Text)
-    games = Column(Integer)
-    minutes = Column(Integer)
-    pos_pg_pc = Column(Float(8))
-    pos_sg_pc = Column(Float(8))
-    pos_sf_pc = Column(Float(8))
-    pos_pf_pc = Column(Float(8))
-    pos_c_pc = Column(Float(8))
-    plus_minus_per_100_on_court = Column(Float(8))
-    plus_minus_per_100_off_court = Column(Float(8))
-    tos_off_foul = Column(Integer)
-    tos_bad_pass = Column(Integer)
-    tos_lost_ball = Column(Integer)
-    tos_other = Column(Integer)
-    points_generated_assist = Column(Integer)
-    and1 = Column(Integer)
-    sfdrawn = Column(Integer)
-    fga_blocked = Column(Integer)
+    __table__ = pbp_table
+
+
+totals_table = Table('totals',
+                     MysqlBase.metadata,
+                     Column('id', Integer, primary_key=True, autoincrement=True),
+                     Column('player_key', String(20)),
+                     Column('season', Text),
+                     Column('season_start', Integer),
+                     Column('age', Integer),
+                     Column('team', String(90), index=True),
+                     Column('league', Text),
+                     Column('pos', Text),
+                     Column('games', Integer),
+                     Column('games_started', Integer),
+                     Column('minutes', Integer),
+                     Column('fg', Integer),
+                     Column('fga', Integer),
+                     Column('fgpc', Float(8)),
+                     Column('fg3p', Integer),
+                     Column('fga3p', Integer),
+                     Column('fgpc_3p', Float(8)),
+                     Column('fg2p', Integer),
+                     Column('fga2p', Integer),
+                     Column('fgpc_2p', Float(8)),
+                     Column('ft', Integer),
+                     Column('fta', Integer),
+                     Column('ftpc', Float(8)),
+                     Column('orb', Integer),
+                     Column('drb', Integer),
+                     Column('trb', Integer),
+                     Column('ast', Integer),
+                     Column('stl', Integer),
+                     Column('blk', Integer),
+                     Column('tov', Integer),
+                     Column('pf', Integer),
+                     Column('pts', Integer),
+                     ForeignKeyConstraint(['player_key', 'season_start'],
+                                          ['seasons.player_key', 'seasons.season_start'])
+                     )
 
 
 class Totals(MysqlBase):
-    __tablename__ = "totals"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    key = Column(String(20), ForeignKey('players.key'))
-    season = Column(Text)
-    season_start = Column(Integer, index=True)
-    age = Column(Integer)
-    team = Column(String(50), index=True)
-    league = Column(Text)
-    pos = Column(Text)
-    games = Column(Integer)
-    games_started = Column(Integer)
-    minutes = Column(Integer)
-    fg = Column(Integer)
-    fga = Column(Integer)
-    fgpc = Column(Float(8))
-    fg3p = Column(Integer)
-    fga3p = Column(Integer)
-    fgpc_3p = Column(Float(8))
-    fg2p = Column(Integer)
-    fga2p = Column(Integer)
-    fgpc_2p = Column(Float(8))
-    ft = Column(Integer)
-    fta = Column(Integer)
-    ftpc = Column(Float(8))
-    orb = Column(Integer)
-    drb = Column(Integer)
-    trb = Column(Integer)
-    ast = Column(Integer)
-    stl = Column(Integer)
-    blk = Column(Integer)
-    tov = Column(Integer)
-    pf = Column(Integer)
-    pts = Column(Integer)
-
-
+    __table__ = totals_table
 
