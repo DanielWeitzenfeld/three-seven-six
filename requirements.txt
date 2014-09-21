@@ -1,10 +1,13 @@
 Jinja2==2.7.3
 MarkupSafe==0.23
+MySQL-python==1.2.5
 PyYAML==3.11
+SQLAlchemy==0.9.7
 backports.ssl-match-hostname==3.4.0.2
 beautifulsoup4==4.3.2
 certifi==14.05.14
 gnureadline==6.3.3
+html5lib==0.999
 ipython==2.2.0
 lazy==1.2
 matplotlib==1.4.0

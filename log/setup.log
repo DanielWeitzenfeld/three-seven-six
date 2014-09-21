@@ -1,0 +1,1312 @@
+2014-09-20 19:21:01,264: INFO: Called with recreate_player_queue=True
+2014-09-20 19:21:01,264: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 24, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    mysql_db.execute(self.mysql, """CREATE TABLE IF NOT EXISTS players;""") # no definition needed yet
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 18, in mysql
+    if self._mysql is None:
+AttributeError: App instance has no attribute '_mysql'
+2014-09-20 19:21:39,114: INFO: Called with recreate_player_queue=True
+2014-09-20 19:21:39,128: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    mysql_db.execute(self.mysql, """CREATE TABLE IF NOT EXISTS players;""") # no definition needed yet
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/dbs/mysql.py", line 68, in execute
+    results = session.connection().execute(sql)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 721, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 870, in _execute_text
+    statement, parameters
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+ProgrammingError: (ProgrammingError) (1113, 'A table must have at least 1 column') 'CREATE TABLE IF NOT EXISTS players;' ()
+2014-09-20 19:22:03,828: INFO: Called with recreate_player_queue=True
+2014-09-20 19:22:07,957: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 44, in create_player_table
+    bbalref_scraper.PLAYERS_TABLE_ID)
+AttributeError: 'module' object has no attribute 'PLAYERS_TABLE_ID'
+2014-09-20 19:22:33,217: INFO: Called with recreate_player_queue=True
+2014-09-20 19:22:37,405: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 46, in create_player_table
+    df = pd.merge(df, df_links, on='name', how='outer')
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/tools/merge.py", line 38, in merge
+    copy=copy)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/tools/merge.py", line 182, in __init__
+    self.join_names) = self._get_merge_keys()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/tools/merge.py", line 348, in _get_merge_keys
+    left_keys.append(left[lk].values)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 1678, in __getitem__
+    return self._getitem_column(key)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 1685, in _getitem_column
+    return self._get_item_cache(key)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 1052, in _get_item_cache
+    values = self._data.get(item)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/internals.py", line 2565, in get
+    loc = self.items.get_loc(item)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/index.py", line 1181, in get_loc
+    return self._engine.get_loc(_values_from_object(key))
+  File "index.pyx", line 129, in pandas.index.IndexEngine.get_loc (pandas/index.c:3354)
+  File "index.pyx", line 149, in pandas.index.IndexEngine.get_loc (pandas/index.c:3234)
+  File "hashtable.pyx", line 696, in pandas.hashtable.PyObjectHashTable.get_item (pandas/hashtable.c:11148)
+  File "hashtable.pyx", line 704, in pandas.hashtable.PyObjectHashTable.get_item (pandas/hashtable.c:11101)
+KeyError: 'name'
+2014-09-20 19:22:52,180: INFO: Called with recreate_player_queue=True
+2014-09-20 19:23:50,098: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 47, in create_player_table
+    df = pd.merge(df, df_links, on='player', how='outer')
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 47, in create_player_table
+    df = pd.merge(df, df_links, on='player', how='outer')
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:23:57,790: INFO: Called with recreate_player_queue=True
+2014-09-20 19:24:02,384: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 45, in create_player_table
+    df_links.name = df_links.name.str.replace('*', '')
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 1843, in __getattr__
+    (type(self).__name__, name))
+AttributeError: 'DataFrame' object has no attribute 'name'
+2014-09-20 19:25:28,305: INFO: Called with recreate_player_queue=True
+2014-09-20 19:25:44,188: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 51, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='replace', index=False) #here is where table is defined
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1054, "Unknown column 'nan' in 'field list'") 'INSERT INTO players (player, from_year, to_year, pos, height, weight, birth_date, college, height_string, height_inches, link, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', 1991.0, 1995.0, u'F-C', Timestamp('2014-06-10 00:00:00'), 240.0, Timestamp('1968-06-24 00:00:00'), u'Duke University', '6-10', 82.0, u'/players/a/abdelal01.html', 0, 0), (u'Zaid Abdul-Aziz', 1969.0, 1978.0, u'C-F', Timestamp('2014-06-09 00:00:00'), 235.0, Timestamp('1946-04-07 00:00:00'), u'Iowa State University', '6-9', 81.0, u'/players/a/abdulza01.html', 0, 1), (u'Kareem Abdul-Jabbar', 1970.0, 1989.0, u'C', Timestamp('2014-07-02 00:00:00'), 225.0, Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', '7-2', 86.0, nan, 0, 2), (u'Mahdi Abdul-Rahman', 1965.0, 1974.0, u'G', Timestamp('2014-06-02 00:00:00'), 185.0, Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', '6-2', 74.0, u'/players/a/abdulma01.html', 0, 3), (u'Mahmoud Abdul-Rauf', 1991.0, 2001.0, u'G', Timestamp('2014-06-01 00:00:00'), 162.0, Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', '6-1', 73.0, u'/players/a/abdulma02.html', 0, 4), (u'Tariq Abdul-Wahad', 1998.0, 2003.0, u'F', Timestamp('2014-06-06 00:00:00'), 223.0, Timestamp('1974-11-03 00:00:00'), u'San Jose State University', '6-6', 78.0, u'/players/a/abdulta01.html', 0, 5), (u'Shareef Abdur-Rahim', 1997.0, 2008.0, u'F', Timestamp('2014-06-09 00:00:00'), 225.0, Timestamp('1976-12-11 00:00:00'), u'University of California', '6-9', 81.0, u'/players/a/abdursh01.html', 0, 6), (u'Tom Abernethy', 1977.0, 1981.0, u'F', Timestamp('2014-06-07 00:00:00'), 220.0, Timestamp('1954-05-06 00:00:00'), u'Indiana University', '6-7', 79.0, u'/players/a/abernto01.html', 0, 7)  ... displaying 10 of 558 total bound parameter sets ...  (u'Bill Bradley*', nan, nan, nan, NaT, nan, NaT, nan, nan, nan, u'/players/b/bradlbi01.html', 0, 407), (u'Roger Brown*', nan, nan, nan, NaT, nan, NaT, nan, nan, nan, u'/players/b/brownro01.html', 0, 408))
+2014-09-20 19:29:16,360: INFO: Called with recreate_player_queue=True
+2014-09-20 19:33:05,995: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='replace', index=False) #here is where table is defined
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='replace', index=False) #here is where table is defined
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:33:07,745: INFO: Called with recreate_player_queue=True
+2014-09-20 19:33:32,182: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    mysql_db.execute(self.mysql, """ALTER TABLE players ADD PRIMARY KEY(id);""")
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1054, "Unknown column 'nan' in 'field list'") 'INSERT INTO players (player, from_year, to_year, pos, height, weight, birth_date, college, height_string, height_inches, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', 1991, 1995, u'F-C', Timestamp('2014-06-10 00:00:00'), 240, Timestamp('1968-06-24 00:00:00'), u'Duke University', '6-10', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', 1969, 1978, u'C-F', Timestamp('2014-06-09 00:00:00'), 235, Timestamp('1946-04-07 00:00:00'), u'Iowa State University', '6-9', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', 1970, 1989, u'C', Timestamp('2014-07-02 00:00:00'), 225, Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', '7-2', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', 1965, 1974, u'G', Timestamp('2014-06-02 00:00:00'), 185, Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', '6-2', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', 1991, 2001, u'G', Timestamp('2014-06-01 00:00:00'), 162, Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', '6-1', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', 1998, 2003, u'F', Timestamp('2014-06-06 00:00:00'), 223, Timestamp('1974-11-03 00:00:00'), u'San Jose State University', '6-6', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', 1997, 2008, u'F', Timestamp('2014-06-09 00:00:00'), 225, Timestamp('1976-12-11 00:00:00'), u'University of California', '6-9', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', 1977, 1981, u'F', Timestamp('2014-06-07 00:00:00'), 220, Timestamp('1954-05-06 00:00:00'), u'Indiana University', '6-7', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', 1947, 1951, u'F-G', Timestamp('2014-06-03 00:00:00'), 175, Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', '6-3', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 403), (u'Michael Bytzura', 1947, 1947, u'F', Timestamp('2014-06-01 00:00:00'), 170, Timestamp('1922-06-18 00:00:00'), u'Long Island University', '6-1', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 404))
+2014-09-20 19:33:50,304: INFO: Called with recreate_player_queue=True
+2014-09-20 19:39:36,670: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='replace', index=False) #here is where table is defined
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='replace', index=False) #here is where table is defined
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:39:38,587: INFO: Called with recreate_player_queue=True
+2014-09-20 19:39:59,690: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 21, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 121, in players_post_process
+    return df
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 121, in players_post_process
+    return df
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:40:01,313: INFO: Called with recreate_player_queue=True
+2014-09-20 19:41:56,421: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 21, in fetch_and_clean
+    if self.post_process:
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 121, in players_post_process
+    #df['height_inches'] = df.height.apply(lambda x: x.month*12 + x.day)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 121, in players_post_process
+    #df['height_inches'] = df.height.apply(lambda x: x.month*12 + x.day)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:41:57,942: INFO: Called with recreate_player_queue=True
+2014-09-20 19:44:44,828: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 22, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 122, in players_post_process
+    
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 122, in players_post_process
+    
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:45:31,254: INFO: Called with recreate_player_queue=True
+2014-09-20 19:45:32,360: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 22, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 120, in players_post_process
+    df[['height_feet', 'height_inches']] = df.height.str.extract(pattern)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 2002, in __setitem__
+    self._setitem_array(key, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 2026, in _setitem_array
+    raise ValueError('Columns must be same length as key')
+ValueError: Columns must be same length as key
+2014-09-20 19:46:15,736: INFO: Called with recreate_player_queue=True
+2014-09-20 19:46:55,659: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 22, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 121, in players_post_process
+    df[['height_feet', 'height_inches']] = df.height.str.extract(pattern)[['feet', 'inches']]
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 2002, in __setitem__
+    self._setitem_array(key, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/frame.py", line 2026, in _setitem_array
+    raise ValueError('Columns must be same length as key')
+ValueError: Columns must be same length as key
+2014-09-20 19:47:04,281: INFO: Called with recreate_player_queue=True
+2014-09-20 19:47:05,413: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 22, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 123, in players_post_process
+    df.height = df.height * 12 + df.height_inches
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/ops.py", line 505, in wrapper
+    arr = na_op(lvalues, rvalues)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/ops.py", line 458, in na_op
+    result[mask] = op(x[mask], y[mask])
+TypeError: coercing to Unicode: need string or buffer, int found
+2014-09-20 19:47:27,717: INFO: Called with recreate_player_queue=True
+2014-09-20 19:48:28,490: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 22, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 123, in players_post_process
+    df = df.drop('height', axis=1)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 123, in players_post_process
+    df = df.drop('height', axis=1)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-20 19:48:29,602: INFO: Called with recreate_player_queue=True
+2014-09-20 19:48:30,716: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 22, in fetch_and_clean
+    df = self.post_process(df)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 124, in players_post_process
+    df.height = df.height * 12 + df.height_inches
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 1843, in __getattr__
+    (type(self).__name__, name))
+AttributeError: 'DataFrame' object has no attribute 'height'
+2014-09-20 19:48:41,542: INFO: Called with recreate_player_queue=True
+2014-09-20 19:49:51,387: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 52, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='replace', index=False) #here is where table is defined
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/dbs/mysql.py", line 68, in execute
+    results = session.connection().execute(sql)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 721, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 870, in _execute_text
+    statement, parameters
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (IntegrityError) (1062, "Duplicate entry '0' for key 'PRIMARY'") 'ALTER TABLE players ADD PRIMARY KEY(id);' ()
+2014-09-20 19:50:12,095: INFO: Called with recreate_player_queue=True
+2014-09-20 20:16:23,421: INFO: Called with recreate_player_queue=True
+2014-09-20 20:16:23,437: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 699, in visit_metadata
+    collection = [t for t in sort_tables(tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 862, in sort_tables
+    {'foreign_key': visit_foreign_key})
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 256, in traverse
+    return traverse_using(iterate(obj, opts), obj, visitors)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 247, in traverse_using
+    meth(target)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 853, in visit_foreign_key
+    parent_table = fkey.column.table
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 725, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 1668, in column
+    tablekey)
+NoReferencedTableError: Foreign key associated with column 'shooting.key' could not find table 'pplayers' with which to generate a foreign key to target column 'key'
+2014-09-20 20:16:41,489: INFO: Called with recreate_player_queue=True
+2014-09-20 20:16:41,519: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 736, in visit_table
+    self.traverse_single(index)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 748, in visit_index
+    self.connection.execute(CreateIndex(index))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (OperationalError) (1170, "BLOB/TEXT column 'key' used in key specification without a key length") 'CREATE INDEX ix_players_key ON players (`key`)' ()
+2014-09-20 20:17:03,037: INFO: Called with recreate_player_queue=True
+2014-09-20 20:17:03,062: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (OperationalError) (1170, "BLOB/TEXT column 'key' used in key specification without a key length") '\nCREATE TABLE shooting (\n\tid INTEGER NOT NULL AUTO_INCREMENT, \n\t`key` TEXT(20), \n\tseason TEXT, \n\tseason_start INTEGER, \n\tage INTEGER, \n\tteam TEXT, \n\tleague TEXT, \n\tpos TEXT, \n\tgames INTEGER, \n\tminutes INTEGER, \n\tfg_pc FLOAT(8), \n\tavg_dist FLOAT(8), \n\tpc_fga_2p FLOAT(8), \n\tpc_2pfga_0_3 FLOAT(8), \n\tpc_2pfga_3_10 FLOAT(8), \n\tpc_2pfga_10_16 FLOAT(8), \n\tpc_2pfga_16plus FLOAT(8), \n\tpc_fga_3p FLOAT(8), \n\tfgpc_2p FLOAT(8), \n\tfgpc_2p_0_3 FLOAT(8), \n\tfgpc_2p_3_10 FLOAT(8), \n\tfgpc_2p_10_16 FLOAT(8), \n\tfgpc_2p_16plus FLOAT(8), \n\tfgpc_3p FLOAT(8), \n\tpc_2pfg_assisted FLOAT(8), \n\tpc_fga_dunks FLOAT(8), \n\tn_dunks INTEGER, \n\tpc_3pfg_assisted FLOAT(8), \n\tpc_3pfga_corner FLOAT(8), \n\tfgpc_3pfga_corner FLOAT(8), \n\theaves_att INTEGER, \n\theaves_made INTEGER, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(`key`) REFERENCES players (`key`)\n)\n\n' ()
+2014-09-20 20:17:20,670: INFO: Called with recreate_player_queue=True
+2014-09-20 20:17:20,702: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 732, in visit_table
+    self.connection.execute(CreateTable(table))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (IntegrityError) (1215, 'Cannot add foreign key constraint') '\nCREATE TABLE shooting (\n\tid INTEGER NOT NULL AUTO_INCREMENT, \n\t`key` VARCHAR(20), \n\tseason TEXT, \n\tseason_start INTEGER, \n\tage INTEGER, \n\tteam TEXT, \n\tleague TEXT, \n\tpos TEXT, \n\tgames INTEGER, \n\tminutes INTEGER, \n\tfg_pc FLOAT(8), \n\tavg_dist FLOAT(8), \n\tpc_fga_2p FLOAT(8), \n\tpc_2pfga_0_3 FLOAT(8), \n\tpc_2pfga_3_10 FLOAT(8), \n\tpc_2pfga_10_16 FLOAT(8), \n\tpc_2pfga_16plus FLOAT(8), \n\tpc_fga_3p FLOAT(8), \n\tfgpc_2p FLOAT(8), \n\tfgpc_2p_0_3 FLOAT(8), \n\tfgpc_2p_3_10 FLOAT(8), \n\tfgpc_2p_10_16 FLOAT(8), \n\tfgpc_2p_16plus FLOAT(8), \n\tfgpc_3p FLOAT(8), \n\tpc_2pfg_assisted FLOAT(8), \n\tpc_fga_dunks FLOAT(8), \n\tn_dunks INTEGER, \n\tpc_3pfg_assisted FLOAT(8), \n\tpc_3pfga_corner FLOAT(8), \n\tfgpc_3pfga_corner FLOAT(8), \n\theaves_att INTEGER, \n\theaves_made INTEGER, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(`key`) REFERENCES players (`key`)\n)\n\n' ()
+2014-09-20 20:18:00,364: INFO: Called with recreate_player_queue=True
+2014-09-20 20:18:00,424: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1617, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 713, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 736, in visit_table
+    self.traverse_single(index)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 120, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 748, in visit_index
+    self.connection.execute(CreateIndex(index))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/ddl.py", line 69, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 783, in _execute_ddl
+    compiled
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (OperationalError) (1170, "BLOB/TEXT column 'league' used in key specification without a key length") 'CREATE INDEX ix_shooting_league ON shooting (league)' ()
+2014-09-20 20:18:20,470: INFO: Called with recreate_player_queue=True
+2014-09-20 20:21:10,266: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 41, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/bbalref_scraper.py", line 16, in fetch_and_clean
+    tupleize_cols=True, skiprows=0)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/html.py", line 851, in read_html
+    parse_dates, tupleize_cols, thousands, attrs, encoding)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/html.py", line 714, in _parse
+    raise_with_traceback(retained)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/html.py", line 708, in _parse
+    tables = p.parse_tables()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/html.py", line 178, in parse_tables
+    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/html.py", line 405, in _parse_tables
+    raise ValueError('No tables found')
+ValueError: No tables found
+2014-09-20 20:23:06,678: INFO: Called with recreate_player_queue=True
+2014-09-20 20:23:22,529: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 54, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1054, "Unknown column 'player' in 'field list'") 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', u'June 24, 1968', u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', u'April 7, 1946', u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', u'April 16, 1947', u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', u'April 15, 1942', u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', u'March 9, 1969', u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', u'November 3, 1974', u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', u'December 11, 1976', u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', u'May 6, 1954', u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', u'February 19, 1923', u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', u'June 18, 1922', u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:23:58,766: INFO: Called with recreate_player_queue=True
+2014-09-20 20:24:14,991: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 54, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1054, "Unknown column 'player' in 'field list'") 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', u'June 24, 1968', u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', u'April 7, 1946', u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', u'April 16, 1947', u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', u'April 15, 1942', u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', u'March 9, 1969', u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', u'November 3, 1974', u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', u'December 11, 1976', u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', u'May 6, 1954', u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', u'February 19, 1923', u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', u'June 18, 1922', u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:25:36,728: INFO: Called with recreate_player_queue=True
+2014-09-20 20:25:36,773: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 33, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1616, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1609, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1799, in contextual_connect
+    self.pool.connect(),
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 641, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 961, in _do_get
+    return self._create_connection()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 537, in __connect
+    connection = self.__pool._creator()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (1049, "Unknown database 'three_seven_six'") None None
+2014-09-20 20:25:51,087: INFO: Called with recreate_player_queue=True
+2014-09-20 20:25:51,095: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    mysql_db.execute(self.mysql, """drop database if exists three_seven_six;""")
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/dbs/mysql.py", line 68, in execute
+    results = session.connection().execute(sql)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 854, in connection
+    close_with_result=close_with_result)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 858, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 322, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1799, in contextual_connect
+    self.pool.connect(),
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 641, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 961, in _do_get
+    return self._create_connection()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 537, in __connect
+    connection = self.__pool._creator()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (1049, "Unknown database 'three_seven_six'") None None
+2014-09-20 20:27:07,983: INFO: Called with recreate_player_queue=True
+2014-09-20 20:27:23,887: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 54, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1292, "Incorrect date value: 'June 24, 1968' for column 'birth_date' at row 1") 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', u'June 24, 1968', u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', u'April 7, 1946', u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', u'April 16, 1947', u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', u'April 15, 1942', u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', u'March 9, 1969', u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', u'November 3, 1974', u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', u'December 11, 1976', u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', u'May 6, 1954', u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', u'February 19, 1923', u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', u'June 18, 1922', u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:28:01,741: INFO: Called with recreate_player_queue=True
+2014-09-20 20:28:17,786: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 54, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+IntegrityError: (IntegrityError) (1062, "Duplicate entry '1' for key 'PRIMARY'") 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', Timestamp('1968-06-24 00:00:00'), u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', Timestamp('1946-04-07 00:00:00'), u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', Timestamp('1974-11-03 00:00:00'), u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', Timestamp('1976-12-11 00:00:00'), u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', Timestamp('1954-05-06 00:00:00'), u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', Timestamp('1922-06-18 00:00:00'), u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:29:02,163: INFO: Called with recreate_player_queue=True
+2014-09-20 20:30:09,372: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 55, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction') 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', Timestamp('1968-06-24 00:00:00'), u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', Timestamp('1946-04-07 00:00:00'), u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', Timestamp('1974-11-03 00:00:00'), u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', Timestamp('1976-12-11 00:00:00'), u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', Timestamp('1954-05-06 00:00:00'), u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', Timestamp('1922-06-18 00:00:00'), u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:31:13,661: INFO: Called with recreate_player_queue=True
+2014-09-20 20:32:20,841: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 55, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction') 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', Timestamp('1968-06-24 00:00:00'), u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', Timestamp('1946-04-07 00:00:00'), u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', Timestamp('1974-11-03 00:00:00'), u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', Timestamp('1976-12-11 00:00:00'), u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', Timestamp('1954-05-06 00:00:00'), u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', Timestamp('1922-06-18 00:00:00'), u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:33:22,832: INFO: Called with recreate_player_queue=True
+2014-09-20 20:34:29,898: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 55, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction') 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', Timestamp('1968-06-24 00:00:00'), u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', Timestamp('1946-04-07 00:00:00'), u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', Timestamp('1974-11-03 00:00:00'), u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', Timestamp('1976-12-11 00:00:00'), u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', Timestamp('1954-05-06 00:00:00'), u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', Timestamp('1922-06-18 00:00:00'), u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:36:37,481: INFO: Called with recreate_player_queue=True
+2014-09-20 20:37:44,365: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 34, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 55, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction') 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', Timestamp('1968-06-24 00:00:00'), u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', Timestamp('1946-04-07 00:00:00'), u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', Timestamp('1974-11-03 00:00:00'), u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', Timestamp('1976-12-11 00:00:00'), u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', Timestamp('1954-05-06 00:00:00'), u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', Timestamp('1922-06-18 00:00:00'), u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:38:12,452: INFO: Called with recreate_player_queue=True
+2014-09-20 20:38:28,326: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 59, in create_player_table
+    df.to_sql('players', con=mysql_db.engine, if_exists='append', index=False)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/core/generic.py", line 950, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 475, in to_sql
+    index_label=index_label)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 842, in to_sql
+    table.insert()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 611, in insert
+    self.pd_sql.execute(ins, data_list)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/pandas/io/sql.py", line 810, in execute
+    return self.engine.execute(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1752, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 729, in execute
+    return meth(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 321, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 826, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 928, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/connectors/mysqldb.py", line 68, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 262, in executemany
+    r = self._query('\n'.join([query[:p], ',\n'.join(q), query[e:]]))
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 354, in _query
+    rowcount = self._do_query(q)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 318, in _do_query
+    db.query(q)
+OperationalError: (OperationalError) (1292, "Incorrect date value: 'NaT' for column 'birth_date' at row 46") 'INSERT INTO players (player, from_year, to_year, pos, weight, birth_date, college, height, link, `key`, scraped, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' ((u'Alaa Abdelnaby', u'1991', u'1995', u'F-C', u'240', Timestamp('1968-06-24 00:00:00'), u'Duke University', 82, u'/players/a/abdelal01.html', u'abdelal01', 0, 0), (u'Zaid Abdul-Aziz', u'1969', u'1978', u'C-F', u'235', Timestamp('1946-04-07 00:00:00'), u'Iowa State University', 81, u'/players/a/abdulza01.html', u'abdulza01', 0, 1), (u'Kareem Abdul-Jabbar', u'1970', u'1989', u'C', u'225', Timestamp('1947-04-16 00:00:00'), u'University of California, Los Angeles', 86, u'/players/a/abdulka01.html', u'abdulka01', 0, 2), (u'Mahdi Abdul-Rahman', u'1965', u'1974', u'G', u'185', Timestamp('1942-04-15 00:00:00'), u'University of California, Los Angeles', 74, u'/players/a/abdulma01.html', u'abdulma01', 0, 3), (u'Mahmoud Abdul-Rauf', u'1991', u'2001', u'G', u'162', Timestamp('1969-03-09 00:00:00'), u'Louisiana State University', 73, u'/players/a/abdulma02.html', u'abdulma02', 0, 4), (u'Tariq Abdul-Wahad', u'1998', u'2003', u'F', u'223', Timestamp('1974-11-03 00:00:00'), u'San Jose State University', 78, u'/players/a/abdulta01.html', u'abdulta01', 0, 5), (u'Shareef Abdur-Rahim', u'1997', u'2008', u'F', u'225', Timestamp('1976-12-11 00:00:00'), u'University of California', 81, u'/players/a/abdursh01.html', u'abdursh01', 0, 6), (u'Tom Abernethy', u'1977', u'1981', u'F', u'220', Timestamp('1954-05-06 00:00:00'), u'Indiana University', 79, u'/players/a/abernto01.html', u'abernto01', 0, 7)  ... displaying 10 of 551 total bound parameter sets ...  (u'Tommy Byrnes', u'1947', u'1951', u'F-G', u'175', Timestamp('1923-02-19 00:00:00'), u'Seton Hall University', 75, u'/players/b/byrneto01.html', u'byrneto01', 0, 549), (u'Michael Bytzura', u'1947', u'1947', u'F', u'170', Timestamp('1922-06-18 00:00:00'), u'Long Island University', 73, u'/players/b/bytzumi01.html', u'bytzumi01', 0, 550))
+2014-09-20 20:39:31,596: INFO: Called with recreate_player_queue=True
+2014-09-20 20:51:02,445: INFO: Called with recreate_player_queue=True
+2014-09-20 20:51:15,347: INFO: Failed to find a table on page: http://www.basketball-reference.com/players/b/
+2014-09-20 20:51:16,686: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 47, in create_player_table
+    df = bbalref_scraper.PLAYERS.fetch_and_clean(url)
+KeyboardInterrupt
+2014-09-20 20:51:21,469: INFO: Called with recreate_player_queue=True
+2014-09-20 20:51:37,254: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 67, in scrape_player_data
+    self.info(p.name)
+AttributeError: 'Player' object has no attribute 'name'
+2014-09-20 20:52:22,752: INFO: Called with recreate_player_queue=True
+2014-09-20 20:52:39,342: INFO: Tariq Abdul-Wahad
+2014-09-20 20:52:40,594: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 74, in scrape_player_data
+    self.info('shit the bed on shooting: %s, url: %s' % (p.name, p.url))
+AttributeError: 'Player' object has no attribute 'name'
+2014-09-20 20:53:57,370: INFO: Called with recreate_player_queue=True
+2014-09-20 20:54:13,303: INFO: Tariq Abdul-Wahad
+2014-09-20 20:54:14,544: INFO: shit the bed on shooting: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-20 22:12:11,586: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 77, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 77, in scrape_player_data
+    time.sleep(WAIT_BETWEEN_REQUESTS)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 10:11:51,387: INFO: Called with recreate_player_queue=True
+2014-09-21 10:11:52,643: INFO: Failed to find a table on page: http://www.basketball-reference.com/players/a/
+2014-09-21 10:11:56,081: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 53, in create_player_table
+    df = pd.merge(df, df_links, on='player', how='outer')
+UnboundLocalError: local variable 'df' referenced before assignment
+2014-09-21 10:14:13,078: INFO: Called with recreate_player_queue=True
+2014-09-21 10:14:31,742: INFO: Tariq Abdul-Wahad
+2014-09-21 10:14:38,646: INFO: shit the bed on pbp: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 10:17:58,157: INFO: shit the bed on totals: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 10:18:48,366: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 10:18:51,850: INFO: Called with recreate_player_queue=True
+2014-09-21 10:18:51,868: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 36, in runApplication
+    self.create_player_table()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 40, in create_player_table
+    mysql_db.execute(self.mysql, """delete from players where True;""")
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/dbs/mysql.py", line 68, in execute
+    results = session.connection().execute(sql)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 721, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 870, in _execute_text
+    statement, parameters
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 958, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1160, in _handle_dbapi_exception
+    exc_info
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 951, in _execute_context
+    context)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 436, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (IntegrityError) (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`three_seven_six`.`shooting`, CONSTRAINT `shooting_ibfk_1` FOREIGN KEY (`key`) REFERENCES `players` (`key`))') 'delete from players where True;' ()
+2014-09-21 10:23:45,660: INFO: Called with from_scratch=True
+2014-09-21 10:23:45,676: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 32, in runApplication
+    MysqlBase.metadata.create_all(mysql_db.engine)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 3352, in create_all
+    tables=tables)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1616, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1609, in _optional_conn_ctx_manager
+    with self.contextual_connect() as conn:
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1799, in contextual_connect
+    self.pool.connect(),
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 338, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 641, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 440, in checkout
+    rec = pool._do_get()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 961, in _do_get
+    return self._create_connection()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 285, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 411, in __init__
+    self.connection = self.__connect()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/pool.py", line 537, in __connect
+    connection = self.__pool._creator()
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 96, in connect
+    connection_invalidated=invalidated
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 90, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 377, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/weitzenfeld/Envs/three-seven-six/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+OperationalError: (OperationalError) (1049, "Unknown database 'three_seven_six'") None None
+2014-09-21 10:23:55,198: INFO: Called with from_scratch=True
+2014-09-21 10:24:11,145: INFO: Tariq Abdul-Wahad
+2014-09-21 10:24:21,110: INFO: shit the bed on totals: Tariq Abdul-Wahad, url: http://www.basketball-reference.com/players/a/abdulta01.html
+2014-09-21 10:25:10,106: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-09-21 10:25:15,628: INFO: Called with from_scratch=False
+2014-09-21 10:25:15,662: INFO: Tariq Abdul-Wahad
+2014-09-21 10:25:29,070: INFO: Shareef Abdur-Rahim
+2014-09-21 10:25:42,742: INFO: Alex Acker
+2014-09-21 10:25:51,084: INFO: shit the bed on totals: Alex Acker, url: http://www.basketball-reference.com/players/a/ackeral01.html
+2014-09-21 10:28:06,299: ERROR: fatal error - aborting
+Traceback (most recent call last):
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/application.py", line 25, in run
+    self.runApplication()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 37, in runApplication
+    self.scrape_player_data()
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/Users/weitzenfeld/PycharmProjects/three-seven-six/lib/three_seven_six/apps/setup.py", line 97, in scrape_player_data
+    p.scraped = True
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 67, in dispatch_line
+    self.user_line(frame)
+BdbQuit

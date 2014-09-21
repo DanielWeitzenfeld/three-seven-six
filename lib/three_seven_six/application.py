@@ -2,14 +2,23 @@ import os, sys, logging, traceback, atexit, socket
 from logging.handlers import SMTPHandler
 import yaml
 import three_seven_six
+from three_seven_six.dbs import mysql
 
 
 class Application:
     """
     Managers logging, error handling, pid-generation, etc.
     """
-    def __init__(self, psql=None):
+
+    def __init__(self, mysql=None):
         self.logger = self.initialize_logger()
+        self._mysql = mysql
+
+    @property
+    def mysql(self):
+        if self._mysql is None:
+            self._mysql = mysql.Session()
+        return self._mysql
 
     def run(self):
         try:
