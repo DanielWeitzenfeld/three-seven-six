@@ -72,8 +72,10 @@ class App(application.Application):
                 df_totals = bbalref_scraper.TOTALS.fetch_and_clean(p.url, p.player_key, objectify=True)
 
                 seasons = df_totals[['player_key', 'season_start']]
-                seasons = seasons.drop_duplicates()
+                seasons = seasons.drop_duplicates().sort_index(by='season_start')
+                seasons['prior_season_start'] = seasons.season_start.shift(1)
                 self.ensure_data_not_already_in_table('seasons', p.player_key)
+                seasons = seasons.astype(object).where(pd.notnull(seasons), None)
                 seasons.to_sql('seasons', con=mysql_db.engine, if_exists='append', index=False)
 
                 self.ensure_data_not_already_in_table('totals', p.player_key)
