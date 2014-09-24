@@ -27,7 +27,6 @@ log = logging.getLogger('sqlalchemy.engine')
 log.setLevel(logging.INFO)
 
 
-
 def turn_on_log():
     global log
     log.setLevel(logging.INFO)
@@ -38,6 +37,6 @@ def turn_off_log():
     log.setLevel(logging.WARN)
 
 
-
-
-
+def fetch_player(player):
+    p = session.query(Player).filter(Player.player == player).one()
+    return p

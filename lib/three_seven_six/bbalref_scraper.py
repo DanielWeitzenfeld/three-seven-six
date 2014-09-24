@@ -28,7 +28,7 @@ class table(object):
             else:
                 df = self.post_process(df)
         df['player_key'] = player_key
-        if objectify: # makes safe for pd.to_sql, otherwise nan's will cause errors.
+        if objectify:  # makes safe for pd.to_sql, otherwise nan's will cause errors.
             df = df.astype(object).where(pd.notnull(df), None)
         return df
 
@@ -83,6 +83,7 @@ def pos_pc_post_process(df):
         df[c] = df[c].astype(float)
         df[c] = df[c] / 100.0
     return df
+
 
 PBP = table('advanced_pbp', [
     ('season', object),

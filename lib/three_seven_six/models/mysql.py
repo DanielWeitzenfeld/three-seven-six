@@ -9,6 +9,8 @@ from sqlalchemy.orm import relationship, aliased
 from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
 from sqlalchemy.sql.expression import case
 
+import pandas as pd
+
 import three_seven_six
 from three_seven_six.dbs import mysql
 from .mysql_base import MysqlBase
@@ -40,6 +42,31 @@ class Player(MysqlBase):
         return self.URL_ROOT + self.link
 
 
+    @hybrid_property
+    def seasons_df(self):
+        rows = []
+        for s in self.seasons:
+            d = {
+                'season_start': s.season_start,
+                'tpa': s.tpa,
+                'tpm': s.tpm,
+                'fgpc_3p': s.fgpc_3p,
+                'teams': s.teams,
+                'positions': s.positions,
+                'new_position_this_season': s.new_position_this_season,
+                'pc_3pfg_assisted': s.pc_3pfg_assisted,
+                'pc_3pfga_corner': s.pc_3pfga_corner,
+                'arc_3pfga': s.arc_3pfga,
+                'arc_3pfgm': s.arc_3pfgm,
+                'fgpc_3parc': s.fgpc_3parc,
+                'corner_3pfga': s.corner_3pfga,
+                'corner_3pfgm': s.corner_3pfgm,
+                'fpgc_3pcorner': s.fpgc_3pcorner
+            }
+            rows.append(d)
+        return pd.DataFrame(rows)
+
+
 season_table = Table("seasons",
                      MysqlBase.metadata,
                      Column('player_key', String(20), primary_key=True),
@@ -59,6 +86,8 @@ class Season(MysqlBase):
 
     prior_season = relationship("Season",
                                 backref='next_season',
+                                lazy="joined",
+                                join_depth=2,
                                 remote_side=[season_table.columns['player_key'], season_table.columns['season_start']])
 
     @hybrid_property
@@ -69,15 +98,116 @@ class Season(MysqlBase):
     def totals_count(cls):
         alias = aliased(Totals)
         return select([func.count(alias.season_start)]). \
-            where(and_(alias.player_key == cls.player_key,
+            where(and_(alias.team != 'TOT',
+                       alias.player_key == cls.player_key,
                        alias.season_start == cls.season_start)).label('totals_count')
 
     @hybrid_property
     def mid_season_team_switch(self):
         return self.totals_count > 1
 
+    @hybrid_property
+    def tpa(self):
+        return sum([t.fga3p if t.fga3p else 0 for t in self.totals if t.team not in ['TOT', 'Did Not Play']])
 
-# mapper(Season, season_table)
+    @tpa.expression
+    def tpa(cls):
+        alias = aliased(Totals)
+        return select([func.sum(alias.fga3p)]). \
+            where(and_(alias.team != 'TOT',
+                       alias.player_key == cls.player_key,
+                       alias.season_start == cls.season_start)).label('season_tpa')
+
+    @hybrid_property
+    def tpm(self):
+        return sum([t.fg3p if t.fg3p else 0 for t in self.totals if t.team != 'TOT'])
+
+    @tpm.expression
+    def tpm(cls):
+        alias = aliased(Totals)
+        return select([func.sum(alias.fg3p)]). \
+            where(and_(alias.team != 'TOT',
+                       alias.player_key == cls.player_key,
+                       alias.season_start == cls.season_start)).label('season_tpm')
+
+    @hybrid_property
+    def fgpc_3p(self):
+        return self.tpm / self.tpa if self.tpa else None
+
+    @hybrid_property
+    def team(self):
+        return self.totals[0].team if not self.mid_season_team_switch else 'MULTI'
+
+    @hybrid_property
+    def teams(self):
+        return ','.join([t.team for t in self.totals if t.team not in ['TOT', 'Did Not Play']])
+
+    @hybrid_property
+    def positions(self):
+        return ','.join(set([t.pos for t in self.totals if t.team not in ['TOT', 'Did Not Play']]))
+
+
+    @hybrid_property
+    def new_position_this_season(self):
+        if self.prior_season:
+            return True if self.positions != self.prior_season.positions else False
+        return False
+
+    @hybrid_property
+    def pc_3pfg_assisted(self):
+        weighted_sum = sum([sh.pc_3pfg_assisted * sh.totals.fga3p for sh in self.shooting if
+                            sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfg_assisted])
+        weights = sum([sh.totals.fga3p for sh in self.shooting if sh.team not in ['TOT', 'Did Not Play']])
+        return weighted_sum / weights
+
+    @hybrid_property
+    def pc_3pfga_corner(self):
+        weighted_sum = sum([sh.pc_3pfga_corner * sh.totals.fga3p for sh in self.shooting if
+                            sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfga_corner])
+        weights = sum([sh.totals.fga3p for sh in self.shooting if sh.team not in ['TOT', 'Did Not Play']])
+        return weighted_sum / weights
+
+    @hybrid_property
+    def arc_3pfga(self):
+        return sum([(1 - sh.pc_3pfga_corner) * sh.totals.fga3p for sh in self.shooting if
+                    sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfga_corner is not None])
+
+    @hybrid_property
+    def corner_3pfga(self):
+        return sum([sh.pc_3pfga_corner * sh.totals.fga3p for sh in self.shooting if
+                    sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfga_corner is not None])
+
+
+    @hybrid_property
+    def arc_3pfgm(self):
+        return sum([sh.totals.fg3p - (sh.fgpc_3pfga_corner * sh.pc_3pfga_corner * sh.totals.fga3p)
+                    for sh in self.shooting if
+                    sh.team not in ['TOT', 'Did Not Play'] and sh.fgpc_3pfga_corner is not None])
+
+    @hybrid_property
+    def corner_3pfgm(self):
+        return sum([sh.fgpc_3pfga_corner * sh.pc_3pfga_corner * sh.totals.fga3p
+                    for sh in self.shooting if
+                    sh.team not in ['TOT', 'Did Not Play'] and sh.fgpc_3pfga_corner is not None])
+
+    @hybrid_property
+    def fgpc_3parc(self):
+        return self.arc_3pfgm / self.arc_3pfga if self.arc_3pfga else None
+
+
+    @hybrid_property
+    def fpgc_3pcorner(self):
+        return self.corner_3pfgm / self.corner_3pfga if self.corner_3pfga else None
+
+    @hybrid_property
+    def games_played(self):
+        return sum([t.games for t in self.totals if t.team not in ['TOT', 'Did Not Play'] and t.games is not None])
+
+    @hybrid_property
+    def interrupted_season(self):
+        return True if self.games_played < 30 or self.mid_season_team_switch else False
+
+
 
 shooting_table = Table("shooting",
                        MysqlBase.metadata,
@@ -120,6 +250,14 @@ shooting_table = Table("shooting",
 
 class Shooting(MysqlBase):
     __table__ = shooting_table
+
+    totals = relationship("Totals",
+                          backref='shooting',
+                          primaryjoin="and_(Shooting.player_key == foreign(Totals.player_key), "
+                                      "Shooting.season_start == foreign(Totals.season_start),"
+                                      "Shooting.team == foreign(Totals.team))",
+                          uselist=False
+    )
 
 
 pbp_table = Table('playbyplay',
