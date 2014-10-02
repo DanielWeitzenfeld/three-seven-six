@@ -140,11 +140,11 @@ class Season(MysqlBase):
 
     @hybrid_property
     def teams(self):
-        return ','.join([t.team for t in self.totals if t.team not in ['TOT', 'Did Not Play']])
+        return ','.join([t.team for t in self.totals if t.is_valid])
 
     @hybrid_property
     def positions(self):
-        return ','.join(set([t.pos for t in self.totals if t.team not in ['TOT', 'Did Not Play']]))
+        return ','.join(set([t.pos for t in self.totals if t.is_valid]))
 
 
     @hybrid_property
@@ -156,39 +156,37 @@ class Season(MysqlBase):
     @hybrid_property
     def pc_3pfg_assisted(self):
         weighted_sum = sum([sh.pc_3pfg_assisted * sh.totals.fga3p for sh in self.shooting if
-                            sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfg_assisted])
-        weights = sum([sh.totals.fga3p for sh in self.shooting if sh.team not in ['TOT', 'Did Not Play']])
+                            sh.is_valid and sh.pc_3pfg_assisted])
+        weights = sum([sh.totals.fga3p for sh in self.shooting if sh.is_valid])
         return weighted_sum / weights
 
     @hybrid_property
     def pc_3pfga_corner(self):
         weighted_sum = sum([sh.pc_3pfga_corner * sh.totals.fga3p for sh in self.shooting if
-                            sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfga_corner])
-        weights = sum([sh.totals.fga3p for sh in self.shooting if sh.team not in ['TOT', 'Did Not Play']])
+                            sh.is_valid and sh.pc_3pfga_corner])
+        weights = sum([sh.totals.fga3p for sh in self.shooting if sh.is_valid])
         return weighted_sum / weights
 
     @hybrid_property
     def arc_3pfga(self):
         return sum([(1 - sh.pc_3pfga_corner) * sh.totals.fga3p for sh in self.shooting if
-                    sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfga_corner is not None])
+                    sh.is_valid and sh.pc_3pfga_corner is not None])
 
     @hybrid_property
     def corner_3pfga(self):
         return sum([sh.pc_3pfga_corner * sh.totals.fga3p for sh in self.shooting if
-                    sh.team not in ['TOT', 'Did Not Play'] and sh.pc_3pfga_corner is not None])
+                    sh.is_valid and sh.pc_3pfga_corner is not None])
 
 
     @hybrid_property
     def arc_3pfgm(self):
         return sum([sh.totals.fg3p - (sh.fgpc_3pfga_corner * sh.pc_3pfga_corner * sh.totals.fga3p)
-                    for sh in self.shooting if
-                    sh.team not in ['TOT', 'Did Not Play'] and sh.fgpc_3pfga_corner is not None])
+                    for sh in self.shooting if sh.is_valid and sh.fgpc_3pfga_corner is not None])
 
     @hybrid_property
     def corner_3pfgm(self):
         return sum([sh.fgpc_3pfga_corner * sh.pc_3pfga_corner * sh.totals.fga3p
-                    for sh in self.shooting if
-                    sh.team not in ['TOT', 'Did Not Play'] and sh.fgpc_3pfga_corner is not None])
+                    for sh in self.shooting if sh.is_valid and sh.fgpc_3pfga_corner is not None])
 
     @hybrid_property
     def fgpc_3parc(self):
@@ -201,12 +199,11 @@ class Season(MysqlBase):
 
     @hybrid_property
     def games_played(self):
-        return sum([t.games for t in self.totals if t.team not in ['TOT', 'Did Not Play'] and t.games is not None])
+        return sum([t.games for t in self.totals if t.is_valid and t.games is not None])
 
     @hybrid_property
     def interrupted_season(self):
         return True if self.games_played < 30 or self.mid_season_team_switch else False
-
 
 
 shooting_table = Table("shooting",
@@ -250,6 +247,10 @@ shooting_table = Table("shooting",
 
 class Shooting(MysqlBase):
     __table__ = shooting_table
+
+    @hybrid_property
+    def is_valid(self):
+        return self.team not in ['TOT', 'Did Not Play']
 
     totals = relationship("Totals",
                           backref='shooting',
@@ -338,3 +339,6 @@ totals_table = Table('totals',
 class Totals(MysqlBase):
     __table__ = totals_table
 
+    @hybrid_property
+    def is_valid(self):
+        return self.team not in ['TOT', 'Did Not Play']
