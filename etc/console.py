@@ -40,3 +40,7 @@ def turn_off_log():
 def fetch_player(player):
     p = session.query(Player).filter(Player.player == player).one()
     return p
+
+def fetch_by_key(key):
+    p = session.query(Player).filter(Player.player_key == key).one()
+    return p
